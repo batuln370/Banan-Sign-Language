@@ -1,0 +1,11 @@
+@import "tailwindcss";
+/* stylelint-disable-next-line at-rule-no-unknown */
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+/* input.css */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+
+

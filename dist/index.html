@@ -1,0 +1,2837 @@
+<!doctype html>
+<html lang="ar" class="dark" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Institute | Home</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            background-image: url("assets/images/hero-himg.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .hero {
+            background-image: url("assets/images/hero-dark.jpg");
+        }
+
+        .about-us {
+            background-image: url("assets/images/about-us.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .about-us {
+            background-image: url("assets/images/about-usderk.png");
+        }
+
+        /* Markup:  */
+        .btn {
+            /* ألوان الوضع النهاري */
+            --primary: #3c0366;
+            --surface: #ffffff;
+
+            --bink: var(--primary);
+            --bsurf: var(--surface);
+
+            position: relative;
+            isolation: isolate;
+
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+
+            letter-spacing: 0;
+            text-transform: none;
+
+            padding: 7px 20px;
+
+            border: 1px solid var(--bink);
+            border-radius: 12px;
+
+            background: transparent;
+            color: var(--bink);
+
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* النص داخل الزر */
+        .btn-label {
+            position: relative;
+            z-index: 2;
+
+            display: inline-block;
+
+            transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* الطبقة المتحركة */
+        .btn::before {
+            content: "";
+
+            position: absolute;
+            z-index: 1;
+
+            inset: 0;
+
+            background: var(--bink);
+
+            transform: translateX(100%);
+
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* عند المرور بالماوس */
+        .btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn:hover .btn-label {
+            color: var(--bsurf);
+        }
+
+        .dark .btn {
+            --bink: #c084fc;
+            /* purple-400 */
+            --bsurf: #2e1065;
+            /* purple-950 */
+        }
+
+        .courses-section {
+            background: #92b2d1;
+            background: linear-gradient(167deg,
+                    rgba(146, 178, 209, 1) 26%,
+                    rgba(206, 148, 242, 1) 100%);
+        }
+
+        .courses-section {
+            background-image: url("assets/images/courses-cards.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .courses-section {
+            background-image: url("assets/images/courses-cards-dark.jpg");
+        }
+
+        .cours {
+            /* https://smoothshadows.com/#djEsMSw1LDAuMTMsMjMsMTAsMTAsIzAzMDIwMywjZjNmNGY2LCNmZmZmZmYsMg%3D%3D */
+            box-shadow:
+                0px 0px 1px rgba(3, 2, 3, 0.03),
+                2px 2px 4px rgba(3, 2, 3, 0.05),
+                4px 4px 8px rgba(3, 2, 3, 0.08),
+                6px 6px 15px rgba(3, 2, 3, 0.1),
+                10px 10px 23px rgba(3, 2, 3, 0.13);
+        }
+
+        .trained-section {
+            background-image: url("assets/images/trained-section.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .trained-section {
+            background-image: url("assets/images/trained-section-dark.png");
+        }
+
+        .other-trained {
+            background-image: url("assets/images/other-trained.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .other-trained {
+            background-image: url("assets/images/other-trained-dark.jpg");
+        }
+
+        .section-blog {
+            background-image: url("assets/images/blog-section.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .section-blog {
+            background-image: url("assets/images/blog-section-dark.jpg");
+        }
+
+        /* From Uiverse.io by satyamchaudharydev */
+        /* inspired form gumroad website */
+        .button {
+            --bg: #000;
+            --hover-bg: #c56afa;
+            --hover-text: #000;
+            color: #fff;
+            cursor: pointer;
+            border: 1px solid var(--bg);
+            border-radius: 4px;
+            padding: 0.6em 1em;
+            background: var(--bg);
+            transition: 0.2s;
+            width: fit-content;
+        }
+
+        .button:hover {
+            color: var(--hover-text);
+            transform: translate(-0.25rem, -0.25rem);
+            background: var(--hover-bg);
+            box-shadow: 0.25rem 0.25rem var(--bg);
+        }
+
+        .button:active {
+            transform: translate(0);
+            box-shadow: none;
+        }
+
+        .section-faq {
+            background-image: url("assets/images/section-faq.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        .dark .section-faq {
+            background-image: url("assets/images/section-faq-dark.jpg");
+        }
+
+        .section-newsletter {
+            background-image: url("assets/images/newsletter-section.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .section-newsletter {
+            background-image: url("assets/images/newsletter-section-dark.png");
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        footer {
+            background-image: url("assets/images/footer.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* ضبط مكان التوقف عند الضغط على روابط الناف بار
+           حتى ما يتغطى بداية القسم تحت الناف بار الثابت */
+        section[id] {
+            scroll-margin-top: 90px;
+        }
+
+        /* * {
+            outline: red 1px solid;
+        } */
+    </style>
+</head>
+
+<body>
+
+
+    <!-- --------------------------------- START HEADER --------------------------------- -->
+
+    <nav
+        class="bg-neutral-primary sticky w-full z-50 top-0 inset-s-0 border-b shadow-blue-50 bg-purple-400 dark:bg-purple-950">
+        <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-2">
+            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="assets/images/logo.png" class="w-15 flex dark:hidden" alt="Flowbite Logo" />
+                <img src="assets/images/logo-dark.png" class="w-15 hidden dark:flex" alt="Flowbite Logo" />
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="text-white dark:text-black bg-purple-950 dark:bg-white box-border border rounded-md border-transparent shadow-xs font-medium leading-5 rounded-base text-sm px-3 ease-in-out hover:bg-purple-600 dark:hover:bg-purple-300 py-2">
+                    سجل دخول
+                </button>
+
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M5 7h14M5 12h14M5 17h14" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
+                    <li>
+                        <a href="#home"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-house" aria-hidden="true"></i>
+                            <span class="md:mb-2"> الرئيسية </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#courses"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <span class="md:mb-2"> الدروس </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#trainers"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-users" aria-hidden="true"></i>
+                            <span class="md:mb-2"> المدربين </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#section-blog"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-blog" aria-hidden="true"></i>
+                            <span class="md:mb-2"> المنتدى </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            <span class="md:mb-2"> عن المنصه </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#footer"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <span class="md:mb-2"> تواصل معنا </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <button id="theme-toggle" type="button"
+                            class="text-purple-100 dark:text-white hover:bg-purple-950 dark:hover:bg-purple-400 rounded-lg text-sm p-2.5 ms-3">
+                            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --------------------------------- END HEADER --------------------------------- -->
+
+
+
+
+
+
+
+    <!-- --------------------------------- START HERO --------------------------------- -->
+
+    <section id="home" class="hero bg-center bg-no-repeat bg-cover">
+        <div class="max-w-7xl all-content flex flex-col md:flex-row mx-auto pt-10">
+            <div class="hero-right w-full md:w-1/2 p-3">
+                <span
+                    class="head-hero font-black text-xl bg-purple-300 rounded-lg p-2 px-3 dark:bg-purple-700 text-purple-700 dark:text-purple-200">
+                    <i class="fa-solid fa-heart me-2 text-purple-700 dark:text-purple-200"></i>
+
+                    تعلم - تواصل - لنبني مجتمعاً أكثر شمولاً
+                </span>
+
+                <h1
+                    class="text-3xl md:text-4xl font-black w-[90%] md:w-[50%] text-center md:text-right text-purple-950 dark:text-white mt-7 mx-auto md:mx-0 leading-[1.2]">
+                    تعلم لغة الإشارة بسهولة مع منصة
+                    <span class="text-purple-400 dark:text-purple-300">بنان</span>
+                </h1>
+
+                <h3
+                    class="text-purple-800 md:w-[70%] text-lg font-semibold text-center md:text-right mt-4 dark:text-gray-300">
+                    منصة تعليمية عربية تهدف إلى نشر لغة الإشارة وتمكين الجميع من التواصل
+                    بلا حواجز.
+                </h3>
+
+                <div class="hero-btn mt-5">
+                    <button
+                        class="bg-purple-950 text-white dark:bg-purple-700 rounded-full shadow-xl/30 cursor-pointer duration-300 hover:scale-105 ease-in-out py-2 px-4">
+                        <i class="fa-solid fa-play me-2"></i>
+                        ابدأ التعلم الآن
+                    </button>
+
+                    <button
+                        class="border border-purple-950 dark:border-purple-300 shadow-sm rounded-full cursor-pointer dark:text-white duration-300 hover:-translate-y-1 hover:text-white dark:hover:text-purple-950 hover:bg-purple-950 dark:hover:bg-purple-300 ease-in-out py-2 px-4 ms-2">
+                        اكتشف المنصة
+                        <i class="fa-solid fa-angle-left"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="hero-left w-full hidden md:flex md:w-1/2">
+                <img src="assets/images/left-hero.jpg" alt="" class="w-full h-full object-fit-cover" />
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- END HERO --------------------------------- -->
+
+
+
+
+
+
+    <!-- --------------------------------- START ABOUT US --------------------------------- -->
+
+    <section id="about" class="about-us">
+        <div class="content max-w-7xl mx-auto flex justify-around flex-col md:flex-row items-center gap-5 p-3">
+            <div class="about-info w-full md:w-[40%]">
+                <h1
+                    class="head-title font-black text-xl text-purple-700 dark:text-purple-200 bg-purple-300 dark:bg-purple-700 block w-fit rounded-lg px-3 mx-auto md:mx-0 mt-5">
+                    لماذا بنان؟
+                </h1>
+
+                <h2
+                    class="text-3xl md:text-4xl font-black text-center md:text-right w-[90%] md:w-[60%] dark:text-white mt-7 mx-auto md:mx-0 leading-[1.2]">
+                    تجربة تعليمية مختلفة
+                    <span class="text-purple-950 dark:text-purple-300">صممت لأجلك</span>
+                </h2>
+
+                <p class="md:w-[70%] text-base font-bold text-center md:text-right dark:text-gray-300 mt-2">
+                    تجمع بين التعليم العملي والتقنية الحديثة لنقدم لك منصة متكاملة تجعل
+                    رجلتك في تعلم لغة الإشارة أسهل وأكثر متعة.
+                </p>
+
+                <button class="btn fx-3 w-full md:w-auto mt-5">
+                    <span class="btn-label"> اكتشف المزايا</span>
+                </button>
+            </div>
+
+            <div class="about-image-all w-full md:w-[60%] h-full relative">
+                <div class="image-about relative isolate h-105 overflow-hidden hidden md:flex">
+                    <div class="absolute w-[70%] h-full rounded-full top-16 right-20 bg-purple-600/35 z-0"></div>
+                    <img src="assets/images/about-us-img.png" alt="about us img"
+                        class="absolute bottom-0 right-1/2 translate-x-1/2 z-10 w-100" />
+                </div>
+
+                <!-- غلاف الكروت: Grid عمودين عالموبايل، contents من md وفوق حتى يترثوا الـ relative من الأب -->
+                <div class="cards-wrap grid grid-cols-2 gap-3 md:contents">
+                    <!-- دروس تفاعلية - فوق يمين -->
+                    <div
+                        class="div-card bg-white/5 dark:bg-purple-600/40 backdrop-blur-sm border border-purple-200 dark:border dark:border-purple-600 rounded-xl shadow-xl/30 relative md:absolute md:top-0 md:inset-s-0 md:-rotate-6 flex flex-col gap-2 items-center justify-center w-full md:w-[25%] h-auto md:h-[39%] py-3 px-4">
+                        <i
+                            class="fa-solid fa-play text-2xl text-white flex items-center justify-center bg-purple-500 border dark:border-purple-500 rounded-full leading-none w-12 h-12 p-3"></i>
+
+                        <h3 class="font-bold text-purple-800 dark:text-white text-sm md:text-base">
+                            دروس تفاعلية
+                        </h3>
+
+                        <p class="text-[11px] md:text-[12px] w-full dark:text-purple-100 text-center">
+                            تعلم من خلال فيديوهات تفاعلية وتمارين عملية.
+                        </p>
+                    </div>
+
+                    <!-- مجتمع داعم - فوق يسار -->
+                    <div
+                        class="div-card bg-white/5 dark:bg-purple-600/40 backdrop-blur-sm border border-purple-200 dark:border dark:border-purple-600 rounded-xl shadow-xl/30 relative md:absolute md:top-0 md:inset-e-0 md:rotate-6 flex flex-col gap-2 items-center justify-center w-full md:w-[25%] h-auto md:h-[39%] py-3 px-4">
+                        <i
+                            class="fa-solid fa-people-group text-2xl text-white flex items-center justify-center bg-purple-500 border dark:border-purple-500 rounded-full leading-none w-12 h-12 p-2 pt-3"></i>
+
+                        <h3 class="font-bold text-purple-800 dark:text-white text-sm md:text-base">
+                            مجتمع داعم
+                        </h3>
+
+                        <p class="text-[11px] md:text-[12px] w-full dark:text-purple-100 text-center">
+                            تواصل مع متعلمين ومدربين وساعد الآخرين.
+                        </p>
+                    </div>
+
+                    <!-- تقدم ملحوظ - تحت يمين -->
+                    <div
+                        class="div-card bg-white/5 dark:bg-purple-600/40 backdrop-blur-sm border border-purple-200 dark:border dark:border-purple-600 rounded-xl shadow-xl/30 relative md:absolute md:bottom-0 md:inset-s-0 md:rotate-6 flex flex-col gap-2 items-center justify-center w-full md:w-[25%] h-auto md:h-[39%] py-3 px-4">
+                        <i
+                            class="fa-solid fa-chart-line text-2xl text-white flex items-center justify-center bg-purple-500 border dark:border-purple-500 rounded-full leading-none w-12 h-12 p-3"></i>
+
+                        <h3 class="font-bold text-purple-800 dark:text-white text-sm md:text-base">
+                            تقدم ملحوظ
+                        </h3>
+
+                        <p class="text-[11px] md:text-[12px] w-full dark:text-purple-100 text-center">
+                            تتبع مستواك واحصل على شهادات معتمدة.
+                        </p>
+                    </div>
+
+                    <!-- بيئة آمنة - تحت يسار -->
+                    <div
+                        class="div-card bg-white/5 dark:bg-purple-600/40 backdrop-blur-sm border border-purple-200 dark:border dark:border-purple-600 rounded-xl shadow-xl/30 relative md:absolute md:bottom-0 md:inset-e-0 md:-rotate-6 flex flex-col gap-2 items-center justify-center w-full md:w-[25%] h-auto md:h-[39%] py-3 px-4">
+                        <i
+                            class="fa-solid fa-shield-halved text-2xl text-white flex items-center justify-center bg-purple-500 border dark:border-purple-500 rounded-full leading-none w-12 h-12 p-3"></i>
+
+                        <h3 class="font-bold text-purple-800 dark:text-white text-sm md:text-base">
+                            بيئة آمنة
+                        </h3>
+
+                        <p class="text-[11px] md:text-[12px] w-full dark:text-purple-100 text-center">
+                            محتوى موثوق وآمن يناسب جميع الأعمار.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- END ABOUT US --------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- START  COURSES CARD SECTION --------------------------------- -->
+
+    <section id="courses" class="courses-section">
+        <div class="content max-w-7xl mx-auto px-4">
+            <div class="header-section flex justify-center items-center flex-col text-center">
+                <span
+                    class="head-title font-black text-xl sm:text-2xl text-purple-700 dark:text-purple-200 bg-purple-300 dark:bg-purple-500 w-fit rounded-lg px-3 mx-auto md:mx-0 mt-5">
+                    الدروس
+                    <i class="fa-regular fa-file-lines"></i>
+                </span>
+
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-black mt-1 dark:text-white">
+                    اختر مستواك وابدأ رحلتك
+                </h1>
+
+                <p class="font-bold text-gray-500 dark:text-purple-100 mt-2">
+                    دروس منظمة تناسب كل مرحلة من رحلتك في تعلم لغة الإشارة
+                </p>
+            </div>
+
+            <div class="courses-all grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3 pb-5">
+
+                <!-- الكورس الاول -->
+                <div class="course flex flex-col h-full rounded-2xl bg-purple-500 
+                    dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg 
+                    hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image1.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            أساسيات لغة الأشارة
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            تعلّم أساسيات التواصل بلغة الإشارة، بدءًا من الحروف والأرقام
+                            وصولًا إلى الإشارات اليومية البسيطة.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher1.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">أحمد الخطيب</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس الثاني -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image2.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            العبارات اليومية
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            تعلّم أهم العبارات والتعبيرات المستخدمة في المواقف اليومية لتبدأ التواصل بثقة وسهولة أكبر
+                            يوميًا.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher2.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">سارة محمود</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس الثالث -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image3.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            المحادثات الأساسية
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            انتقل من الكلمات المفردة إلى تكوين جمل ومحادثات بسيطة تساعدك على التواصل بثقة خلال حياتك
+                            اليومية.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher3.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">خالد يوسف</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس الرابع -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image4.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            لغة الإشارة في العائلة والمجتمع
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            تعرّف على الإشارات والتعبيرات المرتبطة بالعائلة والأصدقاء والعلاقات الاجتماعية ضمن حياتك
+                            اليومية.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher4.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">ريم أحمد</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس الخامس -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image5.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            لغة الإشارة في الدراسة والعمل
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            تعلّم مفردات وتعبيرات تساعدك على التواصل في البيئة التعليمية ومكان العمل بثقة ووضوح أكبر
+                            وفعالية.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher5.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">سامر الحسين</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس السادس -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image6.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            الأماكن والتنقل
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            تعلّم الإشارات المرتبطة بالأماكن والاتجاهات ووسائل النقل والمواقف اليومية المتنوعة أثناء
+                            التنقّل.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher6.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">نور علي</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس السابع -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image7.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            التواصل في المواقف الصحية
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            تعرّف على أهم الإشارات والتعبيرات المستخدمة في المواقف الصحية وحالات الطوارئ للتواصل بوضوح
+                            وأمان.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher7.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">عمر إبراهيم</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الكورس الثامن -->
+                <div
+                    class="course flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-card relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/courde-image8.jpg" alt="صورة كورس أساسيات لغة الإشارة"
+                            class="w-full h-48 object-cover" />
+
+                        <a href="course-details.html"
+                            class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bold text-lg pb-1">
+                                المزيد من المعلومات
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-course text-xl sm:text-2xl font-black text-white">
+                            مهارات التواصل المتقدم
+                        </h2>
+
+                        <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            طوّر قدرتك على التعبير وفهم المحادثات الأكثر تعقيدًا والتواصل بطلاقة وثقة أكبر ضمن مواقفٍ
+                            متنوعة.
+                        </p>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                24 درسًا
+                                <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                250 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                49 دولارًا
+                                <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <div
+                            class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                            <img src="assets/images/teacher8.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                            <h3 class="font-bold text-purple-100 ms-2">ليان مصطفى</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --------------------------------- END  COURSES CARD SECTION --------------------------------- -->
+
+
+
+
+
+    <!-- --------------------------------- START TRAINED SECTION --------------------------------- -->
+
+    <section id="trainers" class="trained-section">
+
+        <div class="content max-w-7xl mx-auto px-4  pb-5">
+
+            <div class="header-section flex justify-center items-center flex-col text-center">
+                <span
+                    class="head-title font-black text-xl sm:text-2xl text-purple-700 dark:text-purple-200 bg-purple-300 dark:bg-purple-500 w-fit rounded-lg px-3 mx-auto md:mx-0 mt-5">
+                    فريق الخبراء
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </span>
+
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-black mt-1 dark:text-white">
+                    تعرف على مدريينا
+                </h1>
+
+                <p class="font-bold text-gray-500 dark:text-purple-100  md:w-[30%] mt-2">
+                    نخبة من المدربين المعتمدين وذوي الخبرة لمساعدتك في
+                    تعلم لغة الإشارة بسهولة واحتراف.
+                </p>
+            </div>
+
+            <div class="trained-all grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3 pb-5">
+
+                <!-- المدرب الاول -->
+                <div class="trained flex flex-col h-full rounded-2xl bg-purple-500 
+                    dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg 
+                    hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-cardTrained relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/trained1.jpeg" alt="صورة المدرب أحمد الخطيب"
+                            class="w-full h-60 object-cover" />
+
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-trained text-xl sm:text-2xl font-black text-white">
+                            أحمد الخطيب
+                        </h2>
+
+                        <span class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            مدرب لغة إشارة معتمد
+                        </span>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                10 سنوات خبرة
+                                <i class="fa-solid fa-award text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                500 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <button class="bg-white text-purple-500  font-bold py-2 px-4 
+                        rounded-lg transition-colors duration-300 hover:shadow-lg
+                        ease-in-out hover:bg-purple-200 hover:text-purple-900">
+                            عرض الملف الشخصي
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- المدرب الثالث -->
+                <div class="trained flex flex-col h-full rounded-2xl bg-purple-500 
+                    dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg 
+                    hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-cardTrained relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/trained3.jpeg" alt="صورة المدرب سارة محمود"
+                            class="w-full h-60 object-cover" />
+
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-trained text-xl sm:text-2xl font-black text-white">
+                            سارة محمود
+                        </h2>
+
+                        <span class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            مدرب لغة إشارة
+                        </span>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                10 سنوات خبرة
+                                <i class="fa-solid fa-award text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                500 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <button class="bg-white text-purple-500  font-bold py-2 px-4 
+                        rounded-lg transition-colors duration-300 hover:shadow-lg
+                        ease-in-out hover:bg-purple-200 hover:text-purple-900">
+                            عرض الملف الشخصي
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- المدرب الثاني -->
+                <div class="trained flex flex-col h-full rounded-2xl bg-purple-500 
+                    dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg 
+                    hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-cardTrained relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/trained2.jpeg" alt="صورة المدرب خالد يوسف"
+                            class="w-full h-60 object-cover" />
+
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-trained text-xl sm:text-2xl font-black text-white">
+                            خالد يوسف
+                        </h2>
+
+                        <span class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            متخصص في التواصل بلغة الإشارة
+                        </span>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                10 سنوات خبرة
+                                <i class="fa-solid fa-award text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                500 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <button class="bg-white text-purple-500  font-bold py-2 px-4 
+                        rounded-lg transition-colors duration-300 hover:shadow-lg
+                        ease-in-out hover:bg-purple-200 hover:text-purple-900">
+                            عرض الملف الشخصي
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- المدرب الرابع -->
+                <div class="trained flex flex-col h-full rounded-2xl bg-purple-500 
+                    dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg 
+                    hover:-translate-y-1 transition-all duration-300">
+
+                    <div class="img-cardTrained relative overflow-hidden group cursor-pointer">
+                        <img src="assets/images/trained4.jpeg" alt="صورة المدرب ريم أحمد"
+                            class="w-full h-60 object-cover" />
+
+                    </div>
+
+                    <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                        <h2 class="title-trained text-xl sm:text-2xl font-black text-white">
+                            ريم أحمد
+                        </h2>
+
+                        <span class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                            مدربة ومتخصصة في تعليم
+                            لغة الإشارة
+                        </span>
+
+                        <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                10 سنوات خبرة
+                                <i class="fa-solid fa-award text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                            <span
+                                class="bg-purple-200 dark:bg-purple-500 dark:text-white p-1 font-bold rounded-lg text-sm">
+                                500 طالبًا
+                                <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                            </span>
+                        </div>
+
+                        <button class="bg-white text-purple-500  font-bold py-2 px-4 
+                        rounded-lg transition-colors duration-300 hover:shadow-lg
+                        ease-in-out hover:bg-purple-200 hover:text-purple-900">
+                            عرض الملف الشخصي
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="other-trained w-full max-w-2xl mx-auto rounded-2xl flex justify-center items-center text-center gap-5 mt-5 p-2">
+                <span class="icon">
+                    <i class="fa-solid fa-users text-purple-100 dark:text-purple-950 md:text-3xl"></i>
+                </span>
+
+                <div class="other-info">
+                    <h3 class="text-[12px]  md:text-xl font-black text-white dark:text-purple-950">
+                        لدينا المزيد من المدريين المتميزين
+                    </h3>
+
+                    <p class="text-[7px] md:text-base text-purple-200 dark:text-purple-700">
+                        انضم إلى ألاف المتعلمين وابدأ رحلتك معنا اليوم.
+                    </p>
+                </div>
+
+                <a href="trainers.html"
+                    class="bg-purple-700 dark:bg-purple-600 text-white font-bold md:py-2 py-1 md:px-4 px-1 rounded-lg text-[10px] md:text-base 
+                    transition-colors duration-300 hover:shadow-lg ease-in-out hover:bg-purple-800 dark:hover:bg-purple-700">
+                    عرض جميع المدربين
+                </a>
+
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- --------------------------------- END TRAINED SECTION --------------------------------- -->
+
+
+
+
+
+    <!-- --------------------------------- START BLOG SECTION --------------------------------- -->
+
+    <section id="section-blog" class="section-blog relative py-20 px-4 sm:px-6 lg:px-8
+    transition-colors duration-300 overflow-hidden">
+
+
+
+        <!-- Section Header -->
+
+        <div class="header-section flex justify-center items-center flex-col text-center">
+
+            <span class="head-title font-black text-xl sm:text-2xl text-purple-700 dark:text-purple-200 bg-purple-300
+                    dark:bg-purple-500 w-fit rounded-lg px-3 mx-auto md:mx-0 mt-0 pt-0">
+                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+
+                مقالات بنان
+            </span>
+
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-black mt-1 dark:text-white">
+
+                تعلّم أكثر مع بنان
+            </h1>
+
+            <p class="font-bold text-gray-500 dark:text-purple-100  md:w-[30%] my-2">
+                اكتشف مقالات ونصائح تساعدك على تطوير مهاراتك
+                في لغة الإشارة والتواصل مع الآخرين.
+            </p>
+
+        </div>
+
+
+
+        <!-- Carousel -->
+        <div id="articles-carousel" class="relative max-w-6xl mx-auto" data-carousel="static">
+
+
+
+            <div class="article-all relative overflow-hidden
+                rounded-3xl
+                min-h-150 sm:min-h-125 lg:min-h-107.5
+                shadow-xl
+                bg-white dark:bg-purple-900
+                border border-purple-100 dark:border-purple-800">
+
+
+                <!-- المقال الاول -->
+
+                <div class="article duration-700 ease-in-out" data-carousel-item="active">
+
+                    <div class="h-full
+                        flex flex-col lg:flex-row
+                        items-stretch">
+
+
+                        <!-- Image -->
+                        <div class="w-full lg:w-1/2
+                            h-64 sm:h-80 lg:h-auto
+                            relative overflow-hidden">
+
+                            <img src="assets/images/article1.jpg" alt="تعلم لغة الإشارة" loading="eager"
+                                fetchpriority="high" class="absolute inset-0
+                                w-full h-full
+                                object-cover
+                                transition-transform duration-700
+                                hover:scale-105">
+
+                            <!-- Image Overlay -->
+                            <div class="absolute inset-0
+                                bg-linear-to-t
+                                from-purple-950/60
+                                to-transparent">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Content -->
+                        <div class="w-full lg:w-1/2
+                            flex flex-col justify-center
+                            p-6 sm:p-8 lg:p-12
+                            text-right">
+
+                            <span class="w-fit
+                                px-3 py-1 mb-4
+                                rounded-lg
+                                bg-purple-100 dark:bg-purple-800
+                                text-purple-700 dark:text-purple-200
+                                text-sm font-bold">
+
+                                للمبتدئين
+                            </span>
+
+                            <h3 class="text-2xl sm:text-3xl
+                                font-black
+                                text-purple-950 dark:text-white
+                                mb-4">
+
+                                لماذا تعلّم لغة الإشارة مهم للجميع؟
+                            </h3>
+
+                            <p class="text-gray-600 dark:text-purple-200
+                                leading-8
+                                text-sm sm:text-base font-semibold
+                                mb-8 w-[90%]">
+                                لغة الإشارة ليست وسيلة للتواصل فحسب، بل جسر يساعد على بناء مجتمع أكثر شمولًا.
+                                تعرّف على أهمية تعلّمها وكيف يمكن للمعرفة البسيطة أن تجعل التواصل أسهل وأكثر إنسانية.
+                            </p>
+
+                            <a href="single-blog.html" class="button">
+
+                                اقرأ المقال
+
+                                <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- المقال الثاني -->
+
+                <div class="article duration-700 ease-in-out hidden" data-carousel-item>
+
+                    <div class="h-full
+                        flex flex-col lg:flex-row
+                        items-stretch">
+
+
+                        <!-- Image -->
+                        <div class="w-full lg:w-1/2
+                            h-64 sm:h-80 lg:h-auto
+                            relative overflow-hidden">
+
+                            <img src="assets/images/article2.jpg" alt="تعلم لغة الإشارة" loading="eager"
+                                fetchpriority="high" class="absolute inset-0
+                                w-full h-full
+                                object-cover
+                                transition-transform duration-700
+                                hover:scale-105">
+
+                            <!-- Image Overlay -->
+                            <div class="absolute inset-0
+                                bg-linear-to-t
+                                from-purple-950/60
+                                to-transparent">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Content -->
+                        <div class="w-full lg:w-1/2
+                            flex flex-col justify-center
+                            p-6 sm:p-8 lg:p-12
+                            text-right">
+
+                            <span class="w-fit
+                                px-3 py-1 mb-4
+                                rounded-lg
+                                bg-purple-100 dark:bg-purple-800
+                                text-purple-700 dark:text-purple-200
+                                text-sm font-bold">
+
+                                للمبتدئين
+                            </span>
+
+                            <h3 class="text-2xl sm:text-3xl
+                                font-black
+                                text-purple-950 dark:text-white
+                                mb-4">
+                                كيف تبدأ تعلّم لغة الإشارة من الصفر؟
+                            </h3>
+
+                            <p class="text-gray-600 dark:text-purple-200
+                                leading-8
+                                text-sm sm:text-base font-semibold
+                                mb-8 w-[90%]">
+                                قد تبدو لغة الإشارة صعبة في البداية، لكن البدء بالخطوات الصحيحة يجعل رحلة التعلّم أبسط
+                                بكثير. اكتشف كيف تتدرج من
+                                الحروف والأرقام إلى الكلمات والعبارات والمحادثات اليومية بثقة.
+                            </p>
+
+                            <a href="single-blog.html" class="button">
+
+                                اقرأ المقال
+
+                                <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- المقال الثالث -->
+
+                <div class="article duration-700 ease-in-out hidden" data-carousel-item>
+
+                    <div class="h-full
+                        flex flex-col lg:flex-row
+                        items-stretch">
+
+
+                        <!-- Image -->
+                        <div class="w-full lg:w-1/2
+                            h-64 sm:h-80 lg:h-auto
+                            relative overflow-hidden">
+
+                            <img src="assets/images/article3.jpg" alt="تعلم لغة الإشارة" loading="eager"
+                                fetchpriority="high" class="absolute inset-0
+                                w-full h-full
+                                object-cover
+                                transition-transform duration-700
+                                hover:scale-105">
+
+                            <!-- Image Overlay -->
+                            <div class="absolute inset-0
+                                bg-linear-to-t
+                                from-purple-950/60
+                                to-transparent">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Content -->
+                        <div class="w-full lg:w-1/2
+                            flex flex-col justify-center
+                            p-6 sm:p-8 lg:p-12
+                            text-right">
+
+                            <span class="w-fit
+                                px-3 py-1 mb-4
+                                rounded-lg
+                                bg-purple-100 dark:bg-purple-800
+                                text-purple-700 dark:text-purple-200
+                                text-sm font-bold">
+
+                                للمبتدئين
+                            </span>
+
+                            <h3 class="text-2xl sm:text-3xl
+                                font-black
+                                text-purple-950 dark:text-white
+                                mb-4">
+                                لغة الإشارة في الحياة اليومية: أكثر من مجرد كلمات
+                            </h3>
+
+                            <p class="text-gray-600 dark:text-purple-200
+                                leading-8
+                                text-sm sm:text-base font-semibold
+                                mb-8 w-[90%]">
+                                يمكن استخدام لغة الإشارة في مواقف كثيرة نعيشها كل يوم، من التحية
+                                وطلب المساعدة إلى الحديث مع العائلة والأصدقاء. تعرّف على طرق بسيطة تجعل استخدام الإشارة
+                                جزءًا طبيعيًا من حياتك اليومية.
+                            </p>
+
+                            <a href="single-blog.html" class="button">
+
+                                اقرأ المقال
+
+                                <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- المقال الرابع -->
+
+                <div class="article duration-700 ease-in-out hidden" data-carousel-item>
+
+                    <div class="h-full
+                        flex flex-col lg:flex-row
+                        items-stretch">
+
+
+                        <!-- Image -->
+                        <div class="w-full lg:w-1/2
+                            h-64 sm:h-80 lg:h-auto
+                            relative overflow-hidden">
+
+                            <img src="assets/images/article4.jpg" alt="تعلم لغة الإشارة" loading="eager"
+                                fetchpriority="high" class="absolute inset-0
+                                w-full h-full
+                                object-cover
+                                transition-transform duration-700
+                                hover:scale-105">
+
+                            <!-- Image Overlay -->
+                            <div class="absolute inset-0
+                                bg-gradient-to-t
+                                from-purple-950/60
+                                to-transparent">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Content -->
+                        <div class="w-full lg:w-1/2
+                            flex flex-col justify-center
+                            p-6 sm:p-8 lg:p-12
+                            text-right">
+
+                            <span class="w-fit
+                                px-3 py-1 mb-4
+                                rounded-lg
+                                bg-purple-100 dark:bg-purple-800
+                                text-purple-700 dark:text-purple-200
+                                text-sm font-bold">
+
+                                للمبتدئين
+                            </span>
+
+                            <h3 class="text-2xl sm:text-3xl
+                                font-black
+                                text-purple-950 dark:text-white
+                                mb-4">
+                                كيف نجعل الأماكن أكثر سهولة للتواصل؟
+                            </h3>
+
+                            <p class="text-gray-600 dark:text-purple-200
+                                leading-8
+                                text-sm sm:text-base font-semibold
+                                mb-8 w-[90%]">
+                                التواصل السهل يبدأ من فهم احتياجات الآخرين وتوفير بيئة ترحب بالجميع.
+                                نستعرض بعض الأفكار البسيطة التي يمكن أن تساعد المدارس وأماكن العمل والمرافق العامة على
+                                جعل التواصل بلغة الإشارة أكثر سهولة.
+                            </p>
+
+                            <a href="single-blog.html" class="button">
+
+                                اقرأ المقال
+
+                                <i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+            Indicators
+        ========================== -->
+            <div class="absolute z-30
+                flex -translate-x-1/2
+                bottom-5 left-1/2
+                gap-2">
+
+                <button type="button" class="w-3 h-3 rounded-full
+                    bg-purple-600 dark:bg-purple-400" aria-current="true" aria-label="المقال الأول"
+                    data-carousel-slide-to="0">
+                </button>
+
+                <button type="button" class="w-3 h-3 rounded-full
+                    bg-purple-300 dark:bg-purple-700" aria-current="false" aria-label="المقال الثاني"
+                    data-carousel-slide-to="1">
+                </button>
+
+                <button type="button" class="w-3 h-3 rounded-full
+                    bg-purple-300 dark:bg-purple-700" aria-current="false" aria-label="المقال الثالث"
+                    data-carousel-slide-to="2">
+                </button>
+
+                <button type="button" class="w-3 h-3 rounded-full
+                    bg-purple-300 dark:bg-purple-700" aria-current="false" aria-label="المقال الرابع"
+                    data-carousel-slide-to="3">
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+             Previous
+        ========================== -->
+            <button type="button" data-carousel-prev class="absolute top-1/2 -translate-y-1/2
+                start-3 sm:start-5
+                z-30
+                flex items-center justify-center
+                w-10 h-10 sm:w-12 sm:h-12
+                rounded-full
+                bg-white/80 dark:bg-purple-950/80
+                shadow-lg
+                text-purple-700 dark:text-purple-200
+                hover:bg-purple-100
+                dark:hover:bg-purple-900
+                transition-all">
+
+                <i class="fa-solid fa-chevron-left rtl:rotate-180" aria-hidden="true"></i>
+
+                <span class="sr-only">المقال السابق</span>
+
+            </button>
+
+
+            <!-- =========================
+             Next
+        ========================== -->
+            <button type="button" data-carousel-next class="absolute top-1/2 -translate-y-1/2
+                end-3 sm:end-5
+                z-30
+                flex items-center justify-center
+                w-10 h-10 sm:w-12 sm:h-12
+                rounded-full
+                bg-white/80 dark:bg-purple-950/80
+                shadow-lg
+                text-purple-700 dark:text-purple-200
+                hover:bg-purple-100
+                dark:hover:bg-purple-900
+                transition-all">
+
+                <i class="fa-solid fa-chevron-right rtl:rotate-180" aria-hidden="true"></i>
+
+                <span class="sr-only">المقال التالي</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- --------------------------------- END BLOG SECTION --------------------------------- -->
+
+
+    
+
+    <!-- --------------------------------- START FAQ SECTION --------------------------------- -->
+
+
+
+    <section id="faq" class="relative overflow-hidden py-20 px-4
+           bg-purple-50 dark:bg-purple-950
+           transition-colors duration-300">
+
+        <!-- Decorative Background -->
+        <div class="absolute -top-24 -start-24
+               w-80 h-80 rounded-full
+               bg-purple-200/40 dark:bg-purple-400/10
+               blur-3xl pointer-events-none">
+        </div>
+
+        <div class="absolute -bottom-32 -end-24
+               w-96 h-96 rounded-full
+               bg-purple-300/30 dark:bg-purple-400/10
+               blur-3xl pointer-events-none">
+        </div>
+
+
+        <!-- ========================= SECTION HEADER ========================= -->
+        <div class="relative max-w-3xl mx-auto text-center mb-14">
+
+            <span class="inline-flex items-center gap-2
+                   mb-4 px-4 py-2 rounded-full
+                   bg-purple-400
+                   text-purple-950
+                   font-bold text-sm
+                   shadow-sm">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                الأسئلة الشائعة
+
+            </span>
+
+
+            <h2 class="text-3xl md:text-4xl
+                   font-black
+                   text-purple-950 dark:text-white
+                   mb-4">
+
+                هل لديك استفسار؟
+
+            </h2>
+
+
+            <p class="text-base md:text-lg
+                   font-medium leading-8
+                   text-purple-900/70
+                   dark:text-purple-100/80">
+
+                إليك إجابات عن أكثر الأسئلة شيوعًا حول
+                منصة بنان والدورات وطريقة التعلم.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ========================= MAIN CONTENT ========================= -->
+        <div class="relative max-w-6xl mx-auto
+               grid grid-cols-1 lg:grid-cols-2
+               gap-10 lg:gap-16
+               items-center">
+
+
+            <!-- ============================================================= -->
+            <!-- IMAGE - LEFT SIDE                                             -->
+            <!-- ============================================================= -->
+
+            <div class="order-1
+                   w-full
+                   flex items-center justify-center">
+
+                <div class="relative
+                       w-full
+                       max-w-xl
+                       h-[320px]
+                       sm:h-[400px]
+                       lg:h-[500px]
+                       overflow-hidden
+                       rounded-[2rem]
+                       bg-purple-200
+                       dark:bg-purple-900
+                       border border-purple-200
+                       dark:border-purple-400/20
+                       shadow-lg">
+
+                    <!--
+                    فقط غيري مسار الصورة هنا
+                    ولا تحتاجي تعديل أي شيء آخر
+                -->
+
+                    <img src="assets/images/FAQs-bro.svg" alt="التواصل وتعلم لغة الإشارة" class="w-full h-full
+                           duration-500
+                           hover:scale-105">
+
+
+                    <!-- Image Overlay -->
+                    <div class="absolute inset-0
+                           bg-gradient-to-t
+                           from-purple-950/40
+                           via-transparent
+                           to-transparent
+                           pointer-events-none">
+                    </div>
+
+
+                    <!-- Small Information Box -->
+                    <div class="absolute
+                           bottom-5
+                           start-5
+                           end-5
+                           p-4
+                           rounded-2xl
+                           bg-white/85
+                           dark:bg-purple-950/85
+                           backdrop-blur-md
+                           shadow-lg">
+
+                        <div class="flex items-center gap-3">
+
+
+                            <!-- Icon -->
+                            <div class="flex items-center
+                                   justify-center
+                                   shrink-0
+                                   w-11 h-11
+                                   rounded-xl
+                                   bg-purple-400
+                                   text-purple-950">
+
+                                <i class="fa-solid fa-comments"></i>
+
+                            </div>
+
+
+                            <!-- Text -->
+                            <div>
+
+                                <h3 class="font-black
+                                       text-purple-950
+                                       dark:text-white">
+
+                                    تواصل وتعلّم
+
+                                </h3>
+
+                                <p class="text-sm
+                                       text-purple-900/70
+                                       dark:text-purple-100/70">
+
+                                    المعرفة تبدأ بسؤال
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ============================================================= -->
+            <!-- FAQ - RIGHT SIDE                                              -->
+            <!-- ============================================================= -->
+
+            <div class="w-full">
+
+
+                <!-- FAQ Accordion -->
+                <div id="faq-accordion" data-accordion="collapse" data-active-classes="text-purple-950 dark:text-white"
+                    data-inactive-classes="text-purple-900 dark:text-purple-100" class="space-y-3">
+
+
+                    <!-- ===================================================== -->
+                    <!-- QUESTION 1                                             -->
+                    <!-- ===================================================== -->
+
+                    <div class="overflow-hidden
+                           rounded-2xl
+                           bg-white
+                           dark:bg-purple-900/60
+                           border border-purple-200
+                           dark:border-purple-400/20
+                           shadow-sm
+                           hover:shadow-md
+                           transition-all duration-300">
+
+
+                        <h2 id="faq-heading-1">
+
+                            <button type="button" class="flex items-center
+                                   justify-between
+                                   w-full
+                                   p-5
+                                   text-start
+                                   font-bold
+                                   text-base
+                                   md:text-lg
+                                   text-purple-950
+                                   dark:text-white
+                                   hover:bg-purple-100
+                                   dark:hover:bg-purple-400/10
+                                   transition-colors
+                                   duration-300" data-accordion-target="#faq-body-1" aria-expanded="true"
+                                aria-controls="faq-body-1">
+
+
+                                <span class="flex items-center gap-3">
+
+
+                                    <span class="flex items-center
+                                           justify-center
+                                           shrink-0
+                                           w-10 h-10
+                                           rounded-xl
+                                           bg-purple-400
+                                           text-purple-950">
+
+                                        <i class="fa-solid fa-play text-sm">
+                                        </i>
+
+                                    </span>
+
+
+                                    <span>
+                                        كيف أبدأ بتعلّم لغة الإشارة؟
+                                    </span>
+
+
+                                </span>
+
+
+                                <i class="fa-solid fa-chevron-down
+                                       text-purple-700
+                                       dark:text-purple-300">
+                                </i>
+
+
+                            </button>
+
+                        </h2>
+
+
+                        <div id="faq-body-1" aria-labelledby="faq-heading-1">
+
+                            <div class="px-5
+                                   pb-5
+                                   text-sm
+                                   leading-7
+                                   text-purple-900/70
+                                   dark:text-purple-100/70">
+
+                                يمكنك البدء من دورة أساسيات لغة الإشارة،
+                                ثم الانتقال تدريجيًا إلى العبارات والمحادثات
+                                والمستويات المتقدمة.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ===================================================== -->
+                    <!-- QUESTION 2                                             -->
+                    <!-- ===================================================== -->
+
+                    <div class="overflow-hidden
+                           rounded-2xl
+                           bg-white
+                           dark:bg-purple-900/60
+                           border border-purple-200
+                           dark:border-purple-400/20
+                           shadow-sm
+                           hover:shadow-md
+                           transition-all duration-300">
+
+
+                        <h2 id="faq-heading-2">
+
+                            <button type="button" class="flex items-center
+                                   justify-between
+                                   w-full
+                                   p-5
+                                   text-start
+                                   font-bold
+                                   text-base
+                                   md:text-lg
+                                   text-purple-950
+                                   dark:text-white
+                                   hover:bg-purple-100
+                                   dark:hover:bg-purple-400/10
+                                   transition-colors
+                                   duration-300
+                                   collapsed" data-accordion-target="#faq-body-2" aria-expanded="false"
+                                aria-controls="faq-body-2">
+
+
+                                <span class="flex items-center gap-3">
+
+
+                                    <span class="flex items-center
+                                           justify-center
+                                           shrink-0
+                                           w-10 h-10
+                                           rounded-xl
+                                           bg-purple-400
+                                           text-purple-950">
+
+                                        <i class="fa-solid fa-book-open text-sm">
+                                        </i>
+
+                                    </span>
+
+
+                                    <span>
+                                        هل أحتاج إلى معرفة سابقة بلغة الإشارة؟
+                                    </span>
+
+
+                                </span>
+
+
+                                <i class="fa-solid fa-chevron-down
+                                       text-purple-700
+                                       dark:text-purple-300">
+                                </i>
+
+
+                            </button>
+
+                        </h2>
+
+
+                        <div id="faq-body-2" class="hidden" aria-labelledby="faq-heading-2">
+
+                            <div class="px-5
+                                   pb-5
+                                   text-sm
+                                   leading-7
+                                   text-purple-900/70
+                                   dark:text-purple-100/70">
+
+                                لا، يمكنك البدء من المستوى الأساسي حتى لو
+                                لم تتعلم لغة الإشارة من قبل، ثم التقدم
+                                تدريجيًا حسب مستواك.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ===================================================== -->
+                    <!-- QUESTION 3                                             -->
+                    <!-- ===================================================== -->
+
+                    <div class="overflow-hidden
+                           rounded-2xl
+                           bg-white
+                           dark:bg-purple-900/60
+                           border border-purple-200
+                           dark:border-purple-400/20
+                           shadow-sm
+                           hover:shadow-md
+                           transition-all duration-300">
+
+
+                        <h2 id="faq-heading-3">
+
+                            <button type="button" class="flex items-center
+                                   justify-between
+                                   w-full
+                                   p-5
+                                   text-start
+                                   font-bold
+                                   text-base
+                                   md:text-lg
+                                   text-purple-950
+                                   dark:text-white
+                                   hover:bg-purple-100
+                                   dark:hover:bg-purple-400/10
+                                   transition-colors
+                                   duration-300
+                                   collapsed" data-accordion-target="#faq-body-3" aria-expanded="false"
+                                aria-controls="faq-body-3">
+
+
+                                <span class="flex items-center gap-3">
+
+
+                                    <span class="flex items-center
+                                           justify-center
+                                           shrink-0
+                                           w-10 h-10
+                                           rounded-xl
+                                           bg-purple-400
+                                           text-purple-950">
+
+                                        <i class="fa-solid fa-graduation-cap text-sm">
+                                        </i>
+
+                                    </span>
+
+
+                                    <span>
+                                        كيف أختار الدورة المناسبة لي؟
+                                    </span>
+
+
+                                </span>
+
+
+                                <i class="fa-solid fa-chevron-down
+                                       text-purple-700
+                                       dark:text-purple-300">
+                                </i>
+
+
+                            </button>
+
+                        </h2>
+
+
+                        <div id="faq-body-3" class="hidden" aria-labelledby="faq-heading-3">
+
+                            <div class="px-5
+                                   pb-5
+                                   text-sm
+                                   leading-7
+                                   text-purple-900/70
+                                   dark:text-purple-100/70">
+
+                                ابدأ بالمستوى الأساسي، ثم اختر الدورة
+                                التي تناسب احتياجاتك، مثل العبارات اليومية
+                                أو المحادثات أو التواصل في الدراسة والعمل.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ===================================================== -->
+                    <!-- QUESTION 4                                             -->
+                    <!-- ===================================================== -->
+
+                    <div class="overflow-hidden
+                           rounded-2xl
+                           bg-white
+                           dark:bg-purple-900/60
+                           border border-purple-200
+                           dark:border-purple-400/20
+                           shadow-sm
+                           hover:shadow-md
+                           transition-all duration-300">
+
+
+                        <h2 id="faq-heading-4">
+
+                            <button type="button" class="flex items-center
+                                   justify-between
+                                   w-full
+                                   p-5
+                                   text-start
+                                   font-bold
+                                   text-base
+                                   md:text-lg
+                                   text-purple-950
+                                   dark:text-white
+                                   hover:bg-purple-100
+                                   dark:hover:bg-purple-400/10
+                                   transition-colors
+                                   duration-300
+                                   collapsed" data-accordion-target="#faq-body-4" aria-expanded="false"
+                                aria-controls="faq-body-4">
+
+
+                                <span class="flex items-center gap-3">
+
+
+                                    <span class="flex items-center
+                                           justify-center
+                                           shrink-0
+                                           w-10 h-10
+                                           rounded-xl
+                                           bg-purple-400
+                                           text-purple-950">
+
+                                        <i class="fa-solid fa-mobile-screen-button text-sm">
+                                        </i>
+
+                                    </span>
+
+
+                                    <span>
+                                        هل يمكنني متابعة الدروس من الهاتف؟
+                                    </span>
+
+
+                                </span>
+
+
+                                <i class="fa-solid fa-chevron-down
+                                       text-purple-700
+                                       dark:text-purple-300">
+                                </i>
+
+
+                            </button>
+
+                        </h2>
+
+
+                        <div id="faq-body-4" class="hidden" aria-labelledby="faq-heading-4">
+
+                            <div class="px-5
+                                   pb-5
+                                   text-sm
+                                   leading-7
+                                   text-purple-900/70
+                                   dark:text-purple-100/70">
+
+                                نعم، صُممت منصة بنان لتكون سهلة الاستخدام
+                                على الهاتف واللوحي والكمبيوتر، لتتمكن من
+                                متابعة تعلمك أينما كنت.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ========================================================= -->
+                <!-- MORE QUESTIONS BUTTON                                     -->
+                <!-- ========================================================= -->
+
+                <div class="mt-7 text-center">
+
+
+                    <a href="contact.html" class="inline-flex
+                           items-center
+                           justify-center
+                           gap-2
+                           px-6
+                           py-3
+                           rounded-xl
+                           bg-purple-400
+                           text-purple-950
+                           font-black
+                           text-sm
+                           hover:bg-purple-500
+                           dark:hover:bg-purple-300
+                           shadow-sm
+                           hover:shadow-md
+                           hover:-translate-y-0.5
+                           transition-all
+                           duration-300">
+
+
+                        <i class="fa-solid fa-message"></i>
+
+                        لديك استفسار آخر؟ تواصل معنا
+
+                        <i class="fa-solid fa-arrow-left-long"></i>
+
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- --------------------------------- END FAQ SECTION --------------------------------- -->
+
+
+
+
+
+    <!-- --------------------------------- START NEW LETTER SECTION --------------------------------- -->
+
+
+
+    <section id="newsletter" class="section-newsletter relative overflow-hidden bg-purple-100 dark:bg-purple-950">
+
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-purple-300/40 dark:bg-purple-800/30 blur-3xl">
+        </div>
+
+        <div
+            class="absolute -bottom-32 left-1/3 w-80 h-80 rounded-full bg-purple-400/30 dark:bg-purple-700/20 blur-3xl">
+        </div>
+
+
+        <div class="content relative max-w-7xl mx-auto px-4 py-16 sm:py-20">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+
+
+                <div class="newsletter-image relative flex justify-center items-center order-2 lg:order-1">
+
+                    <div class="relative w-full max-w-md">
+
+                        <!-- Day Mode Image -->
+                        <img src="assets/images/Mail-image.svg" alt="ظرف طائر يمثل الاشتراك في النشرة البريدية" class="block dark:hidden w-full h-[260px] sm:h-[320px] lg:h-[360px] object-contain
+                        drop-shadow-xl
+                        animate-[float_4s_ease-in-out_infinite]">
+
+                        <!-- Dark Mode Image -->
+                        <img src="assets/images/Mail-image-dark.svg" alt="ظرف طائر يمثل الاشتراك في النشرة البريدية"
+                            class="hidden dark:block w-full h-[260px] sm:h-[320px] lg:h-[360px] object-contain
+                        drop-shadow-xl
+                        animate-[float_4s_ease-in-out_infinite]">
+
+                        <span class="absolute top-8 left-8 w-4 h-4 rounded-full
+                        bg-purple-400 dark:bg-purple-500 opacity-70">
+                        </span>
+
+                        <span class="absolute bottom-10 right-10 w-6 h-6 rounded-full
+                        bg-purple-300 dark:bg-purple-700 opacity-60">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="newsletter-content order-1 lg:order-2 text-center lg:text-right">
+
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                    bg-purple-400 text-purple-950
+                    dark:bg-purple-800 dark:text-purple-100
+                    font-bold text-sm mb-5">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        النشرة البريدية
+
+                    </span>
+
+
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight
+                    text-purple-950 dark:text-white">
+
+                        ابقَ على اطلاع
+
+                        <br>
+
+                        <span class="text-purple-600 dark:text-purple-400">
+                            مع بنان 💜
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-4 text-base sm:text-lg font-bold leading-8
+                    text-gray-600 dark:text-purple-100
+                    max-w-xl mx-auto lg:mx-0">
+
+                        احصل على أحدث المقالات والنصائح التعليمية
+                        مباشرة إلى بريدك الإلكتروني، وابقَ على اطلاع بكل جديد في بنان.
+
+                    </p>
+
+
+                    <form class="mt-8 flex flex-col sm:flex-row gap-3
+                    max-w-xl mx-auto lg:mx-0" action="#" method="post">
+
+                        <!-- Email Input -->
+                        <div class="relative flex-1">
+
+                            <i class="fa-regular fa-envelope
+                            absolute right-4 top-1/2 -translate-y-1/2
+                            text-purple-500 dark:text-purple-400">
+                            </i>
+
+                            <input type="email" placeholder="أدخل بريدك الإلكتروني" aria-label="البريد الإلكتروني"
+                                required class="w-full h-14 rounded-xl
+                            border-2 border-purple-300
+                            bg-white
+                            pr-12 pl-4
+                            text-gray-900
+                            placeholder:text-gray-400
+                            focus:border-purple-500
+                            focus:ring-2 focus:ring-purple-300
+                            dark:bg-purple-900
+                            dark:border-purple-700
+                            dark:text-white
+                            dark:placeholder:text-purple-300
+                            dark:focus:border-purple-400
+                            dark:focus:ring-purple-800
+                            transition-all duration-300">
+
+                        </div>
+
+
+                        <!-- Subscribe Button -->
+                        <button type="submit" class="group h-14 px-7 rounded-xl
+                        flex items-center justify-center gap-3
+                        bg-purple-950
+                        text-white font-black
+                        border-2 border-purple-950
+                        hover:bg-purple-700
+                        dark:bg-purple-400
+                        dark:text-purple-950
+                        dark:border-purple-400
+                        dark:hover:bg-purple-300
+                        transition-all duration-300
+                        hover:-translate-y-0.5
+                        shadow-lg shadow-purple-950/10">
+
+                            <span>
+                                اشترك الآن
+                            </span>
+
+                            <i class="fa-solid fa-paper-plane
+                            rotate-[-20deg]
+                            group-hover:translate-x-[-4px]
+                            group-hover:translate-y-[-2px]
+                            transition-transform duration-300">
+                            </i>
+
+                        </button>
+
+                    </form>
+
+
+                    <!-- Privacy Text -->
+                    <p class="mt-4 text-xs font-bold
+                    text-gray-500 dark:text-purple-300">
+
+                        <i class="fa-solid fa-lock ml-1"></i>
+
+                        لن نرسل لك رسائل مزعجة، ويمكنك إلغاء الاشتراك في أي وقت.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- --------------------------------- END NEW LETTER SECTION --------------------------------- -->
+
+
+
+
+
+
+
+    <!-- --------------------------------- START FOOTER --------------------------------- -->
+
+
+
+    <footer id="footer" class="relative overflow-hidden bg-purple-950 text-purple-100">
+
+        <!-- Decorative Background -->
+        <div class="absolute -top-32 -right-32 w-80 h-80 rounded-full
+        bg-purple-800/30 blur-3xl">
+        </div>
+
+        <div class="absolute -bottom-40 left-1/4 w-96 h-96 rounded-full
+        bg-purple-700/20 blur-3xl">
+        </div>
+
+
+        <div class="content relative max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+            gap-10 lg:gap-16
+            py-14 sm:py-16">
+                <div class="text-center sm:text-right">
+
+                    <a href="index.html" class="inline-block text-3xl font-black text-white
+                    hover:text-purple-300 transition-colors duration-300">
+
+                        بنان
+
+                    </a>
+
+                    <p class="mt-4 text-sm font-bold leading-7
+                    text-purple-200 max-w-xs mx-auto sm:mx-0">
+
+                        منصة بنان لتعلّم لغة الإشارة بطريقة سهلة،
+                        تفاعلية وممتعة، لنساهم معًا في بناء مجتمع أكثر تواصلًا وشمولًا.
+
+                    </p>
+
+
+                    <!-- Social Media -->
+
+                    <div class="flex justify-center sm:justify-start items-center
+                    gap-3 mt-6">
+
+                        <a href="#" aria-label="فيسبوك" class="w-10 h-10 flex items-center justify-center
+                        rounded-full bg-purple-800
+                        text-purple-100
+                        hover:bg-purple-400 hover:text-purple-950
+                        transition-all duration-300">
+
+                            <i class="fa-brands fa-facebook-f"></i>
+
+                        </a>
+
+
+                        <a href="#" aria-label="إنستغرام" class="w-10 h-10 flex items-center justify-center
+                        rounded-full bg-purple-800
+                        text-purple-100
+                        hover:bg-purple-400 hover:text-purple-950
+                        transition-all duration-300">
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+
+                        <a href="#" aria-label="يوتيوب" class="w-10 h-10 flex items-center justify-center
+                        rounded-full bg-purple-800
+                        text-purple-100
+                        hover:bg-purple-400 hover:text-purple-950
+                        transition-all duration-300">
+
+                            <i class="fa-brands fa-youtube"></i>
+
+                        </a>
+
+
+                        <a href="#" aria-label="لينكدإن" class="w-10 h-10 flex items-center justify-center
+                        rounded-full bg-purple-800
+                        text-purple-100
+                        hover:bg-purple-400 hover:text-purple-950
+                        transition-all duration-300">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="text-center sm:text-right">
+
+                    <h3 class="text-lg font-black text-white mb-5">
+
+                        المنصة
+
+                    </h3>
+
+
+                    <ul class="space-y-3 text-sm font-bold">
+
+                        <li>
+                            <a href="index.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                الرئيسية
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="courses.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                الدروس
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="trainers.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                المدربون
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="forum.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                المنتدى
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="text-center sm:text-right">
+
+                    <h3 class="text-lg font-black text-white mb-5">
+
+                        معلومات
+
+                    </h3>
+
+
+                    <ul class="space-y-3 text-sm font-bold">
+
+                        <li>
+                            <a href="about.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                عن بنان
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#faq" class="hover:text-purple-400 transition-colors duration-300">
+
+                                الأسئلة الشائعة
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="articles.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                المقالات
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="contact.html" class="hover:text-purple-400 transition-colors duration-300">
+
+                                تواصل معنا
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="text-center sm:text-right">
+
+                    <h3 class="text-lg font-black text-white mb-5">
+
+                        تواصل معنا
+
+                    </h3>
+
+
+                    <ul class="space-y-4 text-sm font-bold">
+
+
+                        <!-- Email -->
+
+                        <li class="flex items-center justify-center sm:justify-start gap-3">
+
+                            <span class="w-9 h-9 shrink-0 flex items-center justify-center
+                            rounded-full bg-purple-800
+                            text-purple-300">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                            </span>
+
+                            <a href="mailto:info@banan.com"
+                                class="hover:text-purple-400 transition-colors duration-300">
+
+                                info@banan.com
+
+                            </a>
+
+                        </li>
+
+                        <li class="flex items-center justify-center sm:justify-start gap-3">
+
+                            <span class="w-9 h-9 shrink-0 flex items-center justify-center
+                            rounded-full bg-purple-800
+                            text-purple-300">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                            </span>
+
+                            <a href="tel:+00000000000" class="hover:text-purple-400 transition-colors duration-300
+                            direction-ltr">
+
+                                +000 000 000 000
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Location -->
+
+                        <li class="flex items-center justify-center sm:justify-start gap-3">
+
+                            <span class="w-9 h-9 shrink-0 flex items-center justify-center
+                            rounded-full bg-purple-800
+                            text-purple-300">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                            </span>
+
+                            <span>
+                                سوريا
+                            </span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="border-t border-purple-800
+            py-5
+            flex flex-col sm:flex-row
+            items-center justify-between
+            gap-3
+            text-center sm:text-right">
+
+                <p class="text-xs sm:text-sm font-bold text-purple-300">
+
+                    © 2026 بنان — جميع الحقوق محفوظة
+
+                </p>
+
+
+                <p class="text-xs sm:text-sm font-bold text-purple-400">
+
+                    صُممت منصة بنان للتعلّم والتواصل 💜
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- --------------------------------- END FOOTER --------------------------------- -->
+
+
+    <script>
+        const faqButtons = document.querySelectorAll(".faq-button");
+
+        faqButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const currentAnswer =
+                    button.nextElementSibling;
+
+                const currentIcon =
+                    button.querySelector("i.fa-chevron-down");
+
+                const isOpen =
+                    !currentAnswer.classList.contains("hidden");
+
+
+                // إغلاق كل الأسئلة الأخرى
+                document.querySelectorAll(".faq-answer").forEach(answer => {
+
+                    if (answer !== currentAnswer) {
+                        answer.classList.add("hidden");
+                    }
+
+                });
+
+
+                document.querySelectorAll(".faq-button").forEach(btn => {
+
+                    if (btn !== button) {
+                        btn.setAttribute("aria-expanded", "false");
+                    }
+
+                });
+
+
+                document.querySelectorAll(".faq-button i.fa-chevron-down")
+                    .forEach(icon => {
+
+                        if (icon !== currentIcon) {
+                            icon.classList.remove("rotate-180");
+                        }
+
+                    });
+
+
+                // فتح / إغلاق السؤال الحالي
+                currentAnswer.classList.toggle("hidden");
+
+                currentIcon.classList.toggle("rotate-180");
+
+                button.setAttribute("aria-expanded", String(!isOpen));
+
+            });
+
+        });
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>

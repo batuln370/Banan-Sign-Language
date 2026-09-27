@@ -1,0 +1,1853 @@
+<!doctype html>
+<html lang="ar" class="dark" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Swiper CSS: لازم يكون قبل style.css عشان كلاسات Tailwind تغلبه -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Institute | COURSE DETAILS</title>
+
+
+
+
+
+    <style>
+        .section-newsletter {
+            background-image: url("assets/images/newsletter-section.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .section-newsletter {
+            background-image: url("assets/images/newsletter-section-dark.png");
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        footer {
+            background-image: url("assets/images/footer.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* ضبط مكان التوقف عند الضغط على روابط الناف بار
+           حتى ما يتغطى بداية القسم تحت الناف بار الثابت */
+        section[id] {
+            scroll-margin-top: 90px;
+        }
+
+        .course-information {
+            background-image: url("assets/images/course-information.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .course-information {
+            background-image: url("assets/images/course-information-dark.jpg");
+        }
+
+        /* Social Media Icons - From Uiverse.io by david-mohseni */
+        .social-icons {
+            display: inline-flex;
+            list-style: none;
+            height: 120px;
+            width: 100%;
+            padding-top: 10px;
+            font-family: "Poppins", sans-serif;
+            justify-content: start;
+        }
+
+        .social-icons .social-icon {
+            position: relative;
+            background: #fff;
+            color: #374151;
+            border-radius: 50%;
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .social-icons .social-tooltip {
+            position: absolute;
+            top: 0;
+            font-size: 14px;
+            background: #fff;
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .social-icons .social-tooltip::before {
+            position: absolute;
+            content: "";
+            height: 8px;
+            width: 8px;
+            background: #fff;
+            bottom: -3px;
+            left: 50%;
+            transform: translate(-50%) rotate(45deg);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .social-icons .social-icon:hover .social-tooltip {
+            top: -45px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icons .facebook:hover,
+        .social-icons .facebook:hover .social-tooltip,
+        .social-icons .facebook:hover .social-tooltip::before {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .social-icons .twitter:hover,
+        .social-icons .twitter:hover .social-tooltip,
+        .social-icons .twitter:hover .social-tooltip::before {
+            background: #1da1f2;
+            color: #fff;
+        }
+
+        .social-icons .instagram:hover,
+        .social-icons .instagram:hover .social-tooltip,
+        .social-icons .instagram:hover .social-tooltip::before {
+            background: #e4405f;
+            color: #fff;
+        }
+
+        .other-courese {
+            background-image: url("assets/images/other-courses.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .dark .other-courese {
+            background-image: url("assets/images/other-courses-dark.jpg");
+        }
+
+        /* Swiper: الكورسات الأخرى */
+        .other-courses-swiper {
+            --swiper-navigation-size: 32px;
+            padding: 1rem;
+        }
+
+        .other-courses-swiper .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            transition-property: transform, translate, box-shadow;
+        }
+
+        .other-courses-swiper .swiper-button-prev,
+        .other-courses-swiper .swiper-button-next {
+            width: 45px;
+            height: 60px;
+            background: transparent;
+            color: #3c0366;
+            font-weight: 900;
+        }
+
+        .other-courses-swiper .swiper-button-prev::after,
+        .other-courses-swiper .swiper-button-next::after {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .other-courses-swiper .swiper-button-prev:hover,
+        .other-courses-swiper .swiper-button-next:hover {
+            background: transparent;
+            color: #581c87;
+        }
+
+        .other-courses-swiper .swiper-button-disabled {
+            opacity: 0.35;
+        }
+
+        /* * {
+            outline: red 1px solid;
+        } */
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- START HEADER --------------------------------- -->
+
+    <nav
+        class="bg-neutral-primary sticky w-full z-50 top-0 inset-s-0 border-b shadow-blue-50 bg-purple-400 dark:bg-purple-950">
+        <div class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-2">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="assets/images/logo.png" class="w-15 flex dark:hidden" alt="Flowbite Logo" />
+                <img src="assets/images/logo-dark.png" class="w-15 hidden dark:flex" alt="Flowbite Logo" />
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="text-white dark:text-black bg-purple-950 dark:bg-white box-border border rounded-md border-transparent shadow-xs font-medium leading-5 rounded-base text-sm px-3 ease-in-out hover:bg-purple-600 dark:hover:bg-purple-300 py-2">
+                    سجل دخول
+                </button>
+
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M5 7h14M5 12h14M5 17h14" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
+                    <li>
+                        <a href="index.html#home"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-house" aria-hidden="true"></i>
+                            <span class="md:mb-2"> الرئيسية </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#courses"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <span class="md:mb-2"> الدروس </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#trainers"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-users" aria-hidden="true"></i>
+                            <span class="md:mb-2"> المدربين </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#section-blog"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-blog" aria-hidden="true"></i>
+                            <span class="md:mb-2"> المنتدى </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#about"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            <span class="md:mb-2"> عن المنصه </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#footer"
+                            class="flex md:flex-col items-center md:justify-center gap-1 py-2 px-3 text-purple-950 dark:text-white bg-brand rounded relative pb-2 group md:bg-transparent md:text-fg-brand md:p-0"
+                            aria-current="page">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <span class="md:mb-2"> تواصل معنا </span>
+                            <span
+                                class="absolute bottom-0 right-0 w-0 h-0.5 bg-purple-950 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full">
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <button id="theme-toggle" type="button"
+                            class="text-purple-100 dark:text-white hover:bg-purple-950 dark:hover:bg-purple-400 rounded-lg text-sm p-2.5 ms-3">
+                            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    fill-rule="evenodd" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --------------------------------- END HEADER --------------------------------- -->
+
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- START SECTION HERO COURSE --------------------------------- -->
+
+    <section class="section-hero-course relative overflow-hidden bg-purple-400 bg-purple/100 dark:bg-purple-950/90">
+        <div class="content max-w-7xl mx-auto p-2 flex justify-content-between">
+            <div class="info-left w-full md:w-1/2">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol
+                        class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse text-purple-950 dark:text-white">
+                        <li class="inline-flex items-center">
+                            <a href="#"
+                                class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                                </svg>
+                                الرئيسية
+                            </a>
+                        </li>
+
+                        <li>
+                            <div class="flex items-center space-x-1.5">
+                                <svg class="w-3.5 h-3.5 rtl:rotate-180 text-body" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m9 5 7 7-7 7" />
+                                </svg>
+                                <a href="#"
+                                    class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+                                    الكورسات
+                                </a>
+                            </div>
+                        </li>
+
+                        <li aria-current="page">
+                            <div class="flex items-center space-x-1.5">
+                                <svg class="w-3.5 h-3.5 rtl:rotate-180 text-body" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m9 5 7 7-7 7" />
+                                </svg>
+                                <span class="inline-flex items-center text-sm font-medium text-body-subtle">
+                                    أساسيات لغة الإشارة
+                                </span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+
+                <div class="info-course pt-22.5">
+                    <h1 class="text-xl md:text-3xl font-bold text-purple-950 dark:text-white mb-5">
+                        أساسيات لغة الإشارة
+                    </h1>
+
+                    <p class="md:w-[50%] font-bold leading-[1.9] dark:text-purple-200 mb-5">
+                        تعلّم أساسيات التواصل بلغة الإشارة، بدءا من الحروف والأرقام وصولاً
+                        إلى الإشارات اليومية البسيطة.
+                    </p>
+
+                    <div class="text-pruple-400 dark:text-white font-bold mb-5">
+                        <span class="bg-purple-950 dark:bg-purple-600 text-white rounded-md p-1 me-2">
+                            مدرّب معتمد:
+                        </span>
+                        سارة محمود
+                    </div>
+
+                    <div class="course-meta flex flex-wrap items-center gap-3">
+                        <div
+                            class="course-meta-item text-purple-950 dark:text-purple-50 font-bold p-1 me-2 inline-flex items-center gap-2 mb-5">
+                            <i class="fa-regular fa-file-lines"></i>
+                            24 درسا
+                        </div>
+
+                        <div
+                            class="course-meta-item text-purple-950 dark:text-purple-50 font-bold p-1 me-2 inline-flex items-center gap-2 mb-5">
+                            <i class="fa-solid fa-clock"></i>
+                            6 ساعات
+                        </div>
+
+                        <div
+                            class="course-meta-item text-purple-950 dark:text-purple-50 font-bold p-1 me-2 inline-flex items-center gap-2 mb-5">
+                            <i class="fa-solid fa-tag"></i>
+                            99$
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-left grow flex justify-end items-end relative">
+                <img src="assets/images/courde-image2.jpg" alt="Course Image"
+                    class="image-left-img w-[70%] absolute left-0 -bottom-3 rounded-md" />
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- END SECTION HERO COURSE --------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- start SECTION COURSE INFORMATION --------------------------------- -->
+
+    <section class="course-information">
+        <div class="inner-content max-w-7xl mx-auto p-2">
+            <div class="content flex justify-between gap-5 flex-col lg:flex-row w-full">
+                <div class="tabs-all flex-1 min-w-0">
+                    <!-- ========== هيدر التابات ========== -->
+                    <div class="text-sm font-medium text-center text-body border-b border-default">
+                        <ul class="flex flex-wrap -mb-px" data-tabs-toggle="#tabcontent" role="tablist"
+                            data-tabs-active-classes="text-purple-700 border-purple-700 dark:text-purple-400 dark:border-purple-400"
+                            data-tabs-inactive-classes="border-transparent text-gray-600 hover:text-purple-700 hover:border-purple-700 dark:text-gray-300 dark:hover:text-purple-400 dark:hover:border-purple-400">
+                            <li class="me-2" role="presentation">
+                                <button type="button" id="details-tab" data-tabs-target="#details" role="tab"
+                                    aria-controls="details" aria-selected="true"
+                                    class="inline-block p-4 border-b-2 rounded-t-base cursor-pointer transition-colors duration-200">
+                                    تفاصيل الكورس
+                                </button>
+                            </li>
+
+                            <li class="me-2" role="presentation">
+                                <button type="button" id="Curriculum-tab" data-tabs-target="#Curriculum" role="tab"
+                                    aria-controls="Curriculum"
+                                    class="inline-block p-4 border-b-2 rounded-t-base cursor-pointer transition-colors duration-200">
+                                    الدروس
+                                </button>
+                            </li>
+
+                            <li class="me-2" role="presentation">
+                                <button type="button" id="Instructor-tab" data-tabs-target="#Instructor" role="tab"
+                                    aria-controls="Instructor"
+                                    class="inline-block p-4 border-b-2 rounded-t-base cursor-pointer transition-colors duration-200">
+                                    المدرب
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="tabcontent" class="w-full">
+                        <!-- ========== تاب: تفاصيل الكورس ========== -->
+                        <div class="hidden" id="details" role="tabpanel" aria-labelledby="details-tab">
+                            <div class="what-you-learing bg-purple-700/50 dark:bg-purple-700 rounded-md mt-7.5 p-3">
+                                <h2 class="text-2xl font-bold text-purple-950 dark:text-white">
+                                    ماذا ستتعلم؟
+                                </h2>
+
+                                <ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        التعرف على الحروف والأرقام بلغة الإشارة.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        تعلم مجموعة من الإشارات والكلمات الأساسية.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        تكوين عبارات بسيطة واستخدامها يوميًا.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        فهم الإشارات في المواقف الاجتماعية.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        تطوير مهارات التواصل بلغة الإشارة.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        التعرّف على أشكال اليد الأساسية.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        استخدام تعابير الوجه وحركة الجسم.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        تمييز الإشارات المتشابهة وفهم اختلافاتها.
+                                    </li>
+
+                                    <li class="font-medium flex items-start text-gray-900 dark:text-white gap-2">
+                                        <i
+                                            class="fa-solid fa-circle-check text-lg mt-0.5 shrink-0 text-purple-950 dark:text-white"></i>
+                                        تطبيق الإشارات في مواقف قصيرة.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="mt-5 leading-8 text-gray-600 dark:text-white">
+                                في هذا الدرس، ستبدأ بالتعرّف على أساسيات لغة الإشارة وطريقة
+                                استخدامها في التواصل اليومي. سنتعرّف تدريجيًا على مجموعة من
+                                الإشارات الأساسية، مع التركيز على طريقة تنفيذها وفهم معناها
+                                واستخدامها في السياق المناسب. ستتدرّب خلال الدرس على ملاحظة
+                                حركات اليد وتناسقها، وربط الإشارة بالكلمة أو العبارة التي
+                                تعبّر عنها، ثم تطبيق ما تعلمته من خلال أمثلة ومواقف بسيطة
+                                تحاكي التواصل في الحياة اليومية. يهدف الدرس إلى بناء أساس قوي
+                                يمكنك الاعتماد عليه في الدروس التالية، لذلك لا تحتاج إلى أي
+                                معرفة مسبقة بلغة الإشارة؛ يكفي أن تتابع الشرح وتطبّق الإشارات
+                                خطوة بخطوة.
+                            </p>
+
+                            <img src="assets/images/desc-tab.jpg" alt="وصف الكورس" class="w-full h-auto rounded-md my-5"
+                                loading="lazy" />
+
+                            <p class="mt-5 leading-8 text-gray-600 dark:text-white">
+                                في هذا الدرس، ستبدأ بالتعرّف على أساسيات لغة الإشارة وطريقة
+                                استخدامها في التواصل اليومي. سنتعرّف تدريجيًا على مجموعة من
+                                الإشارات الأساسية، مع التركيز على طريقة تنفيذها وفهم معناها
+                                واستخدامها في السياق المناسب. ستتدرّب خلال الدرس على ملاحظة
+                                حركات اليد وتناسقها، وربط الإشارة بالكلمة أو العبارة التي
+                                تعبّر عنها، ثم تطبيق ما تعلمته من خلال أمثلة ومواقف بسيطة
+                                تحاكي التواصل في الحياة اليومية. يهدف الدرس إلى بناء أساس قوي
+                                يمكنك الاعتماد عليه في الدروس التالية، لذلك لا تحتاج إلى أي
+                                معرفة مسبقة بلغة الإشارة؛ يكفي أن تتابع الشرح وتطبّق الإشارات
+                                خطوة بخطوة.
+                            </p>
+                        </div>
+
+                        <!-- ========== تاب: الدروس ========== -->
+                        <div class="hidden mt-7.5 p-3" id="Curriculum" role="tabpanel" aria-labelledby="Curriculum-tab">
+                            <div id="accordion-color" data-accordion="collapse" class="rounded-md overflow-hidden">
+                                <!-- ========== الوحدة الأولى ========== -->
+                                <h2 id="accordion-color-heading-1" class="text-black dark:text-white">
+                                    <button type="button"
+                                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body rounded-t-base border border-t-0 border-x-0 border-b-default hover:text-fg-brand bg-purple-700/25 dark:bg-purple-700/40 hover:bg-purple-600/50 dark:hover:bg-purple-800/50 cursor-pointer gap-3"
+                                        data-accordion-target="#accordion-color-body-1" aria-expanded="true"
+                                        aria-controls="accordion-color-body-1">
+                                        <span>أساسيات لغة الإشارة</span>
+                                        <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m5 15 7-7 7 7" />
+                                        </svg>
+                                    </button>
+                                </h2>
+
+                                <div id="accordion-color-body-1"
+                                    class="hidden border border-s-0 border-e-0 border-t-0 border-b-default"
+                                    aria-labelledby="accordion-color-heading-1">
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                مقدمة إلى لغة الإشارة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                التواصل البصري وأهميته
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                أشكال اليد ووضعياتها
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                حركة اليد واتجاهها
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                الحروف بلغة الإشارة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                تهجئة الأسماء
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                الأرقام الأساسية
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                التدريب على الحروف والأرقام
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ========== الوحدة الثانية ========== -->
+                                <h2 id="accordion-color-heading-2" class="text-black dark:text-white">
+                                    <button type="button"
+                                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body rounded-t-base border border-t-0 border-x-0 border-b-default hover:text-fg-brand bg-purple-700/25 dark:bg-purple-700/40 hover:bg-purple-600/50 dark:hover:bg-purple-800/50 cursor-pointer gap-3"
+                                        data-accordion-target="#accordion-color-body-2" aria-expanded="false"
+                                        aria-controls="accordion-color-body-2">
+                                        <span>التواصل اليومي</span>
+                                        <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m5 15 7-7 7 7" />
+                                        </svg>
+                                    </button>
+                                </h2>
+
+                                <div id="accordion-color-body-2"
+                                    class="hidden border border-s-0 border-e-0 border-t-0 border-b-default"
+                                    aria-labelledby="accordion-color-heading-2">
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                التحية والتعارف
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                أفراد العائلة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                الألوان والصفات
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                الطعام والشراب
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                الوقت والمواعيد
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                الأماكن والاتجاهات
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                السؤال والإجابة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                تكوين عبارات بسيطة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ========== الوحدة الثالثة ========== -->
+                                <h2 id="accordion-color-heading-3" class="text-black dark:text-white">
+                                    <button type="button"
+                                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body rounded-t-base border border-t-0 border-x-0 border-b-default hover:text-fg-brand bg-purple-700/25 dark:bg-purple-700/40 hover:bg-purple-600/50 dark:hover:bg-purple-800/50 cursor-pointer gap-3"
+                                        data-accordion-target="#accordion-color-body-3" aria-expanded="false"
+                                        aria-controls="accordion-color-body-3">
+                                        <span>التطبيق والمحادثة</span>
+                                        <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                            viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m5 15 7-7 7 7" />
+                                        </svg>
+                                    </button>
+                                </h2>
+
+                                <div id="accordion-color-body-3"
+                                    class="hidden border border-s-0 border-e-0 border-t-0 border-b-default"
+                                    aria-labelledby="accordion-color-heading-3">
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                العبارات اليومية الشائعة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                التعبير عن الاحتياجات
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                طلب المساعدة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                التواصل في الأماكن العامة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                المحادثات القصيرة
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                مواقف من الحياة اليومية
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                فهم الإشارات في السياق
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="lesson p-4 md:p-5 flex justify-between items-center text-purple-700 dark:text-purple-300 cursor-pointer">
+                                        <div class="right-lesson flex gap-2 items-center">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                            <h4 class="font-bold hover:text-purple-950 dark:hover:text-white">
+                                                مراجعة وتطبيق نهائي
+                                            </h4>
+                                        </div>
+                                        <div class="left-lesson flex gap-2 items-center">
+                                            <p>30 دقيقة</p>
+                                            <i
+                                                class="fa-solid fa-circle-play text-2xl hover:text-purple-950 dark:hover:text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== تاب: المدرب ========== -->
+                        <div class="hidden" id="Instructor" role="tabpanel" aria-labelledby="Instructor-tab">
+                            <div class="coach mt-7.5 p-3">
+                                <h2
+                                    class="text-xl font-semibold text-purple-950 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 cursor-pointer mb-7">
+                                    سارة محمود
+                                </h2>
+
+                                <div class="coach-imag flex justify-start items-center gap-5">
+                                    <img width="150" src="assets/images/teacher2.jpg" alt="سارة محمود"
+                                        class="rounded-sm" />
+
+                                    <div class="all-data text-gray-700 dark:text-gray-200">
+                                        <div class="data mb-2">
+                                            <i class="fa-solid fa-user-group"></i>
+                                            139 طالب
+                                        </div>
+
+                                        <div class="data">
+                                            <i class="fa-solid fa-book"></i>
+                                            15 كورس
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mt-4 max-w-xl leading-8 text-gray-600 dark:text-white">
+                                    مدرّبة متخصصة في تعليم لغة الإشارة للمبتدئين، تهتم بتبسيط
+                                    المفاهيم وتقديمها بطريقة عملية تساعد المتعلّم على اكتساب
+                                    المهارات الأساسية واستخدامها في مواقف التواصل اليومية.
+                                </p>
+
+                                <div class="icon-social">
+                                    <!-- From Uiverse.io by david-mohseni -->
+                                    <ul class="social-icons">
+                                        <li>
+                                            <a href="#" class="social-icon facebook" aria-label="Facebook">
+                                                <span class="social-tooltip">Facebook</span>
+                                                <svg viewBox="0 0 320 512" height="1.2em" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="social-icon twitter" aria-label="Twitter">
+                                                <span class="social-tooltip">Twitter</span>
+                                                <svg height="1.8em" fill="currentColor" viewBox="0 0 48 48"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" class="social-icon instagram" aria-label="Instagram">
+                                                <span class="social-tooltip">Instagram</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="1.2em"
+                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                                                    </path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="specifics w-full lg:w-2/5 lg:shrink-0 lg:sticky lg:top-24 self-start">
+                    <div
+                        class="specifics-card bg-purple-200 dark:bg-purple-300 rounded-b-md w-full md:w-[88%] relative -top-2 mr-auto p-3">
+                        <p class="text-4xl font-bold text-purple-950 dark:text-gray-900 my-3">
+                            99$
+                        </p>
+
+                        <button type="button"
+                            class="group h-14 px-7 rounded-xl w-full flex items-center justify-center gap-3 bg-purple-950 text-white font-black border-2 border-purple-950 hover:bg-purple-700 dark:bg-purple-600 dark:text-white dark:border-purple-600 dark:hover:bg-purple-300 dark:hover:text-purple-950 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-purple-950/10 cursor-pointer">
+                            <span class="text-2xl"> ابدأ الآن </span>
+                        </button>
+
+                        <ul class="mt-3">
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-star-half-stroke text-purple-950"></i>
+                                100% تقييمات إيجابية
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-user-plus text-purple-950"></i>
+                                53 طالبًا مسجلاً
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-book-bookmark text-purple-950"></i>
+                                24 درسًا
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-language text-purple-950"></i>
+                                اللغة: العربية
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-circle-question text-purple-950"></i>
+                                3 اختبارات
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-regular fa-pen-to-square text-purple-950"></i>
+                                تقييمات: نعم
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-mobile-screen text-purple-950"></i>
+                                متوفر على التطبيق
+                            </li>
+
+                            <li class="text-gray-800 font-medium text-base mb-3">
+                                <i class="fa-solid fa-arrow-down-1-9 text-purple-950"></i>
+                                مستوى المهارة: مبتدئ
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-5">
+
+                <div class="header-section max-w-7xl mx-auto px-4 flex justify-start items-start flex-col text-right pt-7 mb-5">
+                <h2 id="other-courses-title"
+                    class="text-2xl sm:text-3xl md:text-4xl font-black mt-1 text-purple-950 dark:text-white">
+                    تقييم الكورس :
+                </h2>
+            </div>
+
+                <div class="flex items-center my-3">
+                <div class="flex items-center space-x-1">
+                    <svg class="w-5 h-5 text-yellow-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                    </svg>
+                    <svg class="w-5 h-5 text-yellow-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                    </svg>
+                    <svg class="w-5 h-5 text-yellow-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                    </svg>
+                    <svg class="w-5 h-5 text-yellow-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                    </svg>
+                    <svg class="w-5 h-5 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                    </svg>
+                </div>
+                <p class="ms-2 text-sm font-medium text-gray-900 dark:text-white">4.95 من 5</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">1,745 إجمالي التقييمات</p>
+
+            <div class="flex items-center mt-4">
+                
+                <div class="w-2/4 h-4 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                    <div class="h-4 bg-yellow-400 rounded" style="width: 70%"></div>
+                </div>
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">70%</span>
+            </div>
+            <div class="flex items-center mt-4">
+                
+                <div class="w-2/4 h-4 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                    <div class="h-4 bg-yellow-400 rounded" style="width: 17%"></div>
+                </div>
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">17%</span>
+            </div>
+            <div class="flex items-center mt-4">
+                <div class="w-2/4 h-4 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                    <div class="h-4 bg-yellow-400 rounded" style="width: 8%"></div>
+                </div>
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">8%</span>
+            </div>
+            <div class="flex items-center mt-4">
+                <div class="w-2/4 h-4 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                    <div class="h-4 bg-yellow-400 rounded" style="width: 4%"></div>
+                </div>
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
+            </div>
+            <div class="flex items-center mt-4">
+                <div class="w-2/4 h-4 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+                    <div class="h-4 bg-yellow-400 rounded" style="width: 1%"></div>
+                </div>
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">1%</span>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --------------------------------- END SECTION COURSE INFORMATION --------------------------------- -->
+
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- START SECTION OTHER COURSES --------------------------------- -->
+
+    <section class="other-courese" aria-labelledby="other-courses-title">
+        <div class="inner-content">
+            <div class="header-section max-w-7xl mx-auto px-4 flex justify-start items-start flex-col text-right pt-7">
+                <h2 id="other-courses-title"
+                    class="text-2xl sm:text-3xl md:text-4xl font-black mt-1 text-purple-950 dark:text-white">
+                    كورسات أخرى قد تفيدك :
+                </h2>
+            </div>
+
+            <!-- Swiper: الكورسات الأخرى -->
+            <div class="content swiper other-courses-swiper max-w-7xl mx-auto mt-10" dir="rtl">
+                <div class="swiper-wrapper pb-5">
+                    <!-- الكورس الاول -->
+                    <div
+                        class="swiper-slide flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="img-card relative overflow-hidden group cursor-pointer">
+                            <img src="assets/images/courde-image1.jpg" alt="كورس أساسيات لغة الإشارة"
+                                class="w-full h-48 object-cover" />
+
+                            <a href="course-details.html"
+                                class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg pb-1">
+                                    المزيد من المعلومات
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                            <h3 class="title-course text-xl sm:text-2xl font-black text-white">
+                                أساسيات لغة الإشارة
+                            </h3>
+
+                            <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                                تعلّم أساسيات التواصل بلغة الإشارة، بدءًا من الحروف والأرقام
+                                وصولًا إلى الإشارات اليومية البسيطة.
+                            </p>
+
+                            <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    24 درسًا
+                                    <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    250 طالبًا
+                                    <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    49 دولارًا
+                                    <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                            </div>
+
+                            <div
+                                class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                                <img src="assets/images/teacher1.jpg" alt="صورة المدرّس أحمد الخطيب"
+                                    class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                                <p class="font-bold text-purple-100 ms-2">أحمد الخطيب</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الكورس الثاني -->
+                    <div
+                        class="swiper-slide flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="img-card relative overflow-hidden group cursor-pointer">
+                            <img src="assets/images/courde-image2.jpg" alt="كورس العبارات اليومية"
+                                class="w-full h-48 object-cover" />
+
+                            <a href="course-details.html"
+                                class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg pb-1">
+                                    المزيد من المعلومات
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                            <h3 class="title-course text-xl sm:text-2xl font-black text-white">
+                                العبارات اليومية
+                            </h3>
+
+                            <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                                تعلّم أهم العبارات والتعبيرات المستخدمة في المواقف اليومية
+                                لتبدأ التواصل بثقة وسهولة أكبر يوميًا.
+                            </p>
+
+                            <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    24 درسًا
+                                    <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    250 طالبًا
+                                    <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    49 دولارًا
+                                    <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                            </div>
+
+                            <div
+                                class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                                <img src="assets/images/teacher2.jpg" alt="صورة المدرّسة سارة محمود"
+                                    class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                                <p class="font-bold text-purple-100 ms-2">سارة محمود</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الكورس الثالث -->
+                    <div
+                        class="swiper-slide flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="img-card relative overflow-hidden group cursor-pointer">
+                            <img src="assets/images/courde-image3.jpg" alt="كورس المحادثات الأساسية"
+                                class="w-full h-48 object-cover" />
+
+                            <a href="course-details.html"
+                                class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg pb-1">
+                                    المزيد من المعلومات
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                            <h3 class="title-course text-xl sm:text-2xl font-black text-white">
+                                المحادثات الأساسية
+                            </h3>
+
+                            <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                                انتقل من الكلمات المفردة إلى تكوين جمل ومحادثات بسيطة تساعدك
+                                على التواصل بثقة خلال حياتك اليومية.
+                            </p>
+
+                            <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    24 درسًا
+                                    <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    250 طالبًا
+                                    <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    49 دولارًا
+                                    <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                            </div>
+
+                            <div
+                                class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                                <img src="assets/images/teacher3.jpg" alt="صورة المدرّس خالد يوسف"
+                                    class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                                <p class="font-bold text-purple-100 ms-2">خالد يوسف</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الكورس الرابع -->
+                    <div
+                        class="swiper-slide flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="img-card relative overflow-hidden group cursor-pointer">
+                            <img src="assets/images/courde-image4.jpg" alt="كورس لغة الإشارة في العائلة والمجتمع"
+                                class="w-full h-48 object-cover" />
+
+                            <a href="course-details.html"
+                                class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg pb-1">
+                                    المزيد من المعلومات
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                            <h3 class="title-course text-xl sm:text-2xl font-black text-white">
+                                لغة الإشارة في العائلة والمجتمع
+                            </h3>
+
+                            <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                                تعرّف على الإشارات والتعبيرات المرتبطة بالعائلة والأصدقاء
+                                والعلاقات الاجتماعية ضمن حياتك اليومية.
+                            </p>
+
+                            <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    24 درسًا
+                                    <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    250 طالبًا
+                                    <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    49 دولارًا
+                                    <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                            </div>
+
+                            <div
+                                class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                                <img src="assets/images/teacher4.jpg" alt="صورة المدرّسة ريم أحمد"
+                                    class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                                <p class="font-bold text-purple-100 ms-2">ريم أحمد</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الكورس الخامس -->
+                    <div
+                        class="swiper-slide flex flex-col h-full rounded-2xl bg-purple-500 dark:bg-purple-800 overflow-hidden shadow-2xs w-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="img-card relative overflow-hidden group cursor-pointer">
+                            <img src="assets/images/courde-image5.jpg" alt="كورس لغة الإشارة في الدراسة والعمل"
+                                class="w-full h-48 object-cover" />
+
+                            <a href="course-details.html"
+                                class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300">
+                                <span class="text-white font-bold text-lg pb-1">
+                                    المزيد من المعلومات
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="card-info flex flex-col flex-1 ms-2 mt-2 px-2 pb-2">
+                            <h3 class="title-course text-xl sm:text-2xl font-black text-white">
+                                لغة الإشارة في الدراسة والعمل
+                            </h3>
+
+                            <p class="w-full text-[14px] font-bold text-purple-100 mt-1">
+                                تعلّم مفردات وتعبيرات تساعدك على التواصل في البيئة التعليمية
+                                ومكان العمل بثقة ووضوح وفعالية أكبر.
+                            </p>
+
+                            <div class="flex justify-center items-center my-3 flex-wrap gap-2">
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    24 درسًا
+                                    <i class="fa-solid fa-book text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    250 طالبًا
+                                    <i class="fa-solid fa-users text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                                <span
+                                    class="bg-purple-200 dark:bg-purple-500 text-black dark:text-white p-1 font-bold rounded-lg text-sm">
+                                    49 دولارًا
+                                    <i class="fa-solid fa-money-check-dollar text-purple-700 dark:text-purple-300"></i>
+                                </span>
+                            </div>
+
+                            <div
+                                class="teacher-info flex flex-row items-center gap-1 mt-auto pt-3 border-t border-purple-400/40 dark:border-purple-600">
+                                <img src="assets/images/teacher5.jpg" alt="صورة المدرّس سامر الحسين"
+                                    class="w-10 h-10 rounded-full object-cover border-2 border-purple-300" />
+                                <p class="font-bold text-purple-100 ms-2">سامر الحسين</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- أزرار التنقل -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- END SECTION OTHER COURSES --------------------------------- -->
+
+
+
+
+
+
+
+
+    <!-- --------------------------------- START NEW LETTER SECTION --------------------------------- -->
+
+    <section id="newsletter" class="section-newsletter relative overflow-hidden bg-purple-100 dark:bg-purple-950">
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-purple-300/40 dark:bg-purple-800/30 blur-3xl">
+        </div>
+
+        <div
+            class="absolute -bottom-32 left-1/3 w-80 h-80 rounded-full bg-purple-400/30 dark:bg-purple-700/20 blur-3xl">
+        </div>
+
+        <div class="content relative max-w-7xl mx-auto px-4 py-16 sm:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+                <div class="newsletter-image relative flex justify-center items-center order-2 lg:order-1">
+                    <div class="relative w-full max-w-md">
+                        <!-- Day Mode Image -->
+                        <img src="assets/images/Mail-image.svg" alt="ظرف طائر يمثل الاشتراك في النشرة البريدية"
+                            class="block dark:hidden w-full h-65 sm:h-80 lg:h-90 object-contain drop-shadow-xl animate-[float_4s_ease-in-out_infinite]" />
+
+                        <!-- Dark Mode Image -->
+                        <img src="assets/images/Mail-image-dark.svg" alt="ظرف طائر يمثل الاشتراك في النشرة البريدية"
+                            class="hidden dark:block w-full h-65 sm:h-80 lg:h-90 object-contain drop-shadow-xl animate-[float_4s_ease-in-out_infinite]" />
+
+                        <span
+                            class="absolute top-8 left-8 w-4 h-4 rounded-full bg-purple-400 dark:bg-purple-500 opacity-70">
+                        </span>
+
+                        <span
+                            class="absolute bottom-10 right-10 w-6 h-6 rounded-full bg-purple-300 dark:bg-purple-700 opacity-60">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="newsletter-content order-1 lg:order-2 text-center lg:text-right">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-400 text-purple-950 dark:bg-purple-800 dark:text-purple-100 font-bold text-sm mb-5">
+                        <i class="fa-regular fa-envelope"></i>
+
+                        النشرة البريدية
+                    </span>
+
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight text-purple-950 dark:text-white">
+                        ابقَ على اطلاع
+
+                        <br />
+
+                        <span class="text-purple-600 dark:text-purple-400">
+                            مع بنان 💜
+                        </span>
+                    </h2>
+
+                    <p
+                        class="mt-4 text-base sm:text-lg font-bold leading-8 text-gray-600 dark:text-purple-100 max-w-xl mx-auto lg:mx-0">
+                        احصل على أحدث المقالات والنصائح التعليمية مباشرة إلى بريدك
+                        الإلكتروني، وابقَ على اطلاع بكل جديد في بنان.
+                    </p>
+
+                    <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto lg:mx-0" action="#"
+                        method="post">
+                        <!-- Email Input -->
+                        <div class="relative flex-1">
+                            <i
+                                class="fa-regular fa-envelope absolute right-4 top-1/2 -translate-y-1/2 text-purple-500 dark:text-purple-400">
+                            </i>
+
+                            <input type="email" placeholder="أدخل بريدك الإلكتروني" aria-label="البريد الإلكتروني"
+                                required
+                                class="w-full h-14 rounded-xl border-2 border-purple-300 bg-white pr-12 pl-4 text-gray-900 placeholder:text-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-300 dark:bg-purple-900 dark:border-purple-700 dark:text-white dark:placeholder:text-purple-300 dark:focus:border-purple-400 dark:focus:ring-purple-800 transition-all duration-300" />
+                        </div>
+
+                        <!-- Subscribe Button -->
+                        <button type="submit"
+                            class="group h-14 px-7 rounded-xl flex items-center justify-center gap-3 bg-purple-950 text-white font-black border-2 border-purple-950 hover:bg-purple-700 dark:bg-purple-400 dark:text-purple-950 dark:border-purple-400 dark:hover:bg-purple-300 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-purple-950/10">
+                            <span> اشترك الآن </span>
+
+                            <i
+                                class="fa-solid fa-paper-plane rotate-[-20deg] group-hover:-translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300">
+                            </i>
+                        </button>
+                    </form>
+
+                    <!-- Privacy Text -->
+                    <p class="mt-4 text-xs font-bold text-gray-500 dark:text-purple-300">
+                        <i class="fa-solid fa-lock ml-1"></i>
+
+                        لن نرسل لك رسائل مزعجة، ويمكنك إلغاء الاشتراك في أي وقت.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- END NEW LETTER SECTION --------------------------------- -->
+
+
+
+
+
+
+    <!-- --------------------------------- START FOOTER --------------------------------- -->
+
+    <footer id="footer" class="relative overflow-hidden bg-purple-950 text-purple-100">
+        <!-- Decorative Background -->
+        <div class="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-purple-800/30 blur-3xl"></div>
+
+        <div class="absolute -bottom-40 left-1/4 w-96 h-96 rounded-full bg-purple-700/20 blur-3xl"></div>
+
+        <div class="content relative max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 py-14 sm:py-16">
+                <div class="text-center sm:text-right">
+                    <a href="index.html"
+                        class="inline-block text-3xl font-black text-white hover:text-purple-300 transition-colors duration-300">
+                        بنان
+                    </a>
+
+                    <p class="mt-4 text-sm font-bold leading-7 text-purple-200 max-w-xs mx-auto sm:mx-0">
+                        منصة بنان لتعلّم لغة الإشارة بطريقة سهلة، تفاعلية وممتعة، لنساهم
+                        معًا في بناء مجتمع أكثر تواصلًا وشمولًا.
+                    </p>
+
+                    <!-- Social Media -->
+
+                    <div class="flex justify-center sm:justify-start items-center gap-3 mt-6">
+                        <a href="#" aria-label="فيسبوك"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-800 text-purple-100 hover:bg-purple-400 hover:text-purple-950 transition-all duration-300">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="إنستغرام"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-800 text-purple-100 hover:bg-purple-400 hover:text-purple-950 transition-all duration-300">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="يوتيوب"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-800 text-purple-100 hover:bg-purple-400 hover:text-purple-950 transition-all duration-300">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#" aria-label="لينكدإن"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-purple-800 text-purple-100 hover:bg-purple-400 hover:text-purple-950 transition-all duration-300">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center sm:text-right">
+                    <h3 class="text-lg font-black text-white mb-5">المنصة</h3>
+
+                    <ul class="space-y-3 text-sm font-bold">
+                        <li>
+                            <a href="index.html" class="hover:text-purple-400 transition-colors duration-300">
+                                الرئيسية
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="courses.html" class="hover:text-purple-400 transition-colors duration-300">
+                                الدروس
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="trainers.html" class="hover:text-purple-400 transition-colors duration-300">
+                                المدربون
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="forum.html" class="hover:text-purple-400 transition-colors duration-300">
+                                المنتدى
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-center sm:text-right">
+                    <h3 class="text-lg font-black text-white mb-5">معلومات</h3>
+
+                    <ul class="space-y-3 text-sm font-bold">
+                        <li>
+                            <a href="about.html" class="hover:text-purple-400 transition-colors duration-300">
+                                عن بنان
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#faq" class="hover:text-purple-400 transition-colors duration-300">
+                                الأسئلة الشائعة
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="articles.html" class="hover:text-purple-400 transition-colors duration-300">
+                                المقالات
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="hover:text-purple-400 transition-colors duration-300">
+                                تواصل معنا
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-center sm:text-right">
+                    <h3 class="text-lg font-black text-white mb-5">تواصل معنا</h3>
+
+                    <ul class="space-y-4 text-sm font-bold">
+                        <!-- Email -->
+
+                        <li class="flex items-center justify-center sm:justify-start gap-3">
+                            <span
+                                class="w-9 h-9 shrink-0 flex items-center justify-center rounded-full bg-purple-800 text-purple-300">
+                                <i class="fa-regular fa-envelope"></i>
+                            </span>
+
+                            <a href="mailto:info@banan.com"
+                                class="hover:text-purple-400 transition-colors duration-300">
+                                info@banan.com
+                            </a>
+                        </li>
+
+                        <li class="flex items-center justify-center sm:justify-start gap-3">
+                            <span
+                                class="w-9 h-9 shrink-0 flex items-center justify-center rounded-full bg-purple-800 text-purple-300">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+
+                            <a href="tel:+00000000000"
+                                class="hover:text-purple-400 transition-colors duration-300 direction-ltr">
+                                +000 000 000 000
+                            </a>
+                        </li>
+
+                        <!-- Location -->
+
+                        <li class="flex items-center justify-center sm:justify-start gap-3">
+                            <span
+                                class="w-9 h-9 shrink-0 flex items-center justify-center rounded-full bg-purple-800 text-purple-300">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+
+                            <span> سوريا </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-purple-800 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
+                <p class="text-xs sm:text-sm font-bold text-purple-300">
+                    © 2026 بنان — جميع الحقوق محفوظة
+                </p>
+
+                <p class="text-xs sm:text-sm font-bold text-purple-400">
+                    صُممت منصة بنان للتعلّم والتواصل 💜
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --------------------------------- END FOOTER --------------------------------- -->
+
+
+
+
+
+    <script>
+        const faqButtons = document.querySelectorAll(".faq-button");
+
+        faqButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const currentAnswer = button.nextElementSibling;
+
+                const currentIcon = button.querySelector("i.fa-chevron-down");
+
+                const isOpen = !currentAnswer.classList.contains("hidden");
+
+                // إغلاق كل الأسئلة الأخرى
+                document.querySelectorAll(".faq-answer").forEach((answer) => {
+                    if (answer !== currentAnswer) {
+                        answer.classList.add("hidden");
+                    }
+                });
+
+                document.querySelectorAll(".faq-button").forEach((btn) => {
+                    if (btn !== button) {
+                        btn.setAttribute("aria-expanded", "false");
+                    }
+                });
+
+                document
+                    .querySelectorAll(".faq-button i.fa-chevron-down")
+                    .forEach((icon) => {
+                        if (icon !== currentIcon) {
+                            icon.classList.remove("rotate-180");
+                        }
+                    });
+
+                // فتح / إغلاق السؤال الحالي
+                currentAnswer.classList.toggle("hidden");
+
+                currentIcon.classList.toggle("rotate-180");
+
+                button.setAttribute("aria-expanded", String(!isOpen));
+            });
+        });
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>
