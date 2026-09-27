@@ -1,6 +1,6 @@
 # GitHub Copilot Toolbox — MCP & Skills awareness
 
-_Generated: 2026-09-26T23:55:35.037Z_
+_Generated: 2026-09-27T01:56:48.925Z_
 
 ## How to use this report
 
@@ -13,9 +13,9 @@ _Generated: 2026-09-26T23:55:35.037Z_
 
 ## MCP — workspace
 
-Workspace `mcp.json` _(folder: Syrian-Instiute1)_
+Workspace `mcp.json` _(folder: Banan-Sign-Language)_
 
-- **d:\Claud_Soft\Syrian-Instiute1\.vscode\mcp.json** — _File missing_
+- **d:\Claud_Soft\Banan-Sign-Language\.vscode\mcp.json** — _File missing_
 
 _No active workspace servers in mcp.json._
 
